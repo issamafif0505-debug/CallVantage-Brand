@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" role="img" aria-label="CALL'VANTAGE logo">
+  <!--
+    Concept E: "Le Registre" — White / Reversed variant
+    For use on navy or dark backgrounds.
+    White #F8F9FA text, same gold rule.
+  -->
+  <defs>
+    <linearGradient id="eWhiteRuleGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#C9A84C" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#C9A84C" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#C9A84C" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CALL' — Bold serif, wide tracking, white -->
+  <text x="200" y="46"
+        font-family="Georgia,'Times New Roman','Palatino Linotype',serif"
+        font-weight="700"
+        font-size="38"
+        fill="#F8F9FA"
+        letter-spacing="12"
+        text-anchor="middle">CALL&#x2019;</text>
+
+  <!-- Thin gold rule -->
+  <line x1="80" y1="58" x2="320" y2="58"
+        stroke="url(#eWhiteRuleGold)" stroke-width="0.75"/>
+
+  <!-- VANTAGE — Regular weight serif, white -->
+  <text x="200" y="90"
+        font-family="Georgia,'Times New Roman','Palatino Linotype',serif"
+        font-weight="400"
+        font-size="34"
+        fill="#F8F9FA"
+        letter-spacing="14"
+        text-anchor="middle">VANTAGE</text>
+</svg>

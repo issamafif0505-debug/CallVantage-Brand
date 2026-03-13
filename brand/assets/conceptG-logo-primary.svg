@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 80" role="img" aria-label="CALL'VANTAGE logo">
+  <!-- CALL — heavy weight -->
+  <text x="18" y="55" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="6" fill="#0A1628">CALL</text>
+
+  <!-- Le Duo — two parallel strokes as apostrophe -->
+  <!-- Stroke 1: navy (the call — outbound) -->
+  <line x1="186" y1="38" x2="189" y2="18" stroke="#0A1628" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Stroke 2: gold (the advantage — inbound value) -->
+  <line x1="194" y1="38" x2="197" y2="18" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round"/>
+
+  <!-- VANTAGE — light weight -->
+  <text x="210" y="55" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="40" font-weight="300" letter-spacing="6" fill="#0A1628">VANTAGE</text>
+
+  <!-- Subtle gold underline -->
+  <line x1="18" y1="68" x2="520" y2="68" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
+</svg>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CALL'VANTAGE — Concepts Logo V3 — Psychologie & Design</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #0d1117;
+    color: #F8F9FA;
+    padding: 40px 60px;
+  }
+  h1 {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #C9A84C;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: #F8F9FA;
+  }
+  .intro {
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #484f58;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #21262d;
+  }
+  .concept-block {
+    margin-bottom: 56px;
+  }
+  .concept-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #161b22;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+    transition: border-color 0.3s;
+  }
+  .card:hover {
+    border-color: #C9A84C;
+  }
+  .card-preview {
+    padding: 40px;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-preview.light { background: #F8F9FA; }
+  .card-preview.dark { background: #0A1628; }
+  .card-preview img {
+    max-width: 100%;
+    max-height: 120px;
+  }
+  .card-info {
+    padding: 20px 24px;
+    border-top: 1px solid #21262d;
+  }
+  .card-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.5;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #C9A84C;
+    color: #0A1628;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .tag-psy {
+    background: #00A8E8;
+    color: #fff;
+  }
+  .icons-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 24px;
+    border-top: 1px solid #21262d;
+    background: #0d1117;
+  }
+  .icon-item {
+    text-align: center;
+  }
+  .icon-item span {
+    display: block;
+    font-size: 10px;
+    color: #484f58;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Psychology panel */
+  .psy-panel {
+    background: #0d1117;
+    border: 1px solid #1a3a5c;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  .psy-panel h3 {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #00A8E8;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .psy-panel h3::before {
+    content: "\1F9E0";
+  }
+  .psy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .psy-item {
+    padding: 12px 16px;
+    background: #161b22;
+    border-radius: 8px;
+    border-left: 3px solid #00A8E8;
+  }
+  .psy-item strong {
+    display: block;
+    font-size: 12px;
+    color: #F8F9FA;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .psy-item p {
+    font-size: 11px;
+    color: #8b949e;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Old concepts (dimmed) */
+  .old-section {
+    opacity: 0.4;
+    margin-top: 48px;
+  }
+  .old-section:hover {
+    opacity: 0.7;
+  }
+  .old-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .old-card {
+    background: #161b22;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+  }
+  .old-card .card-preview {
+    padding: 24px;
+    min-height: 100px;
+  }
+  .old-card .card-info {
+    padding: 12px 16px;
+  }
+  .old-card .card-name {
+    font-size: 13px;
+  }
+
+  @media (max-width: 900px) {
+    .concept-row, .psy-grid { grid-template-columns: 1fr; }
+    .old-grid { grid-template-columns: 1fr 1fr; }
+    body { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Call'Vantage</h1>
+<p class="subtitle">Concepts Logo — Round 3</p>
+<p class="intro">
+  Chaque concept ci-dessous est construit sur des principes de psychologie cognitive et de neuromarketing.
+  L'objectif : que le logo travaille inconsciemment pour la marque, avant meme que le prospect ait lu un mot.
+</p>
+
+<div class="section-title">Nouveaux Concepts — Approche Psychologique</div>
+
+<!-- ═══════════════ CONCEPT F — LE SCEAU ═══════════════ -->
+<div class="concept-block">
+  <div class="concept-row">
+    <div class="card">
+      <div class="card-preview light">
+        <img src="conceptF-logo-primary.svg" alt="Concept F">
+      </div>
+      <div class="card-info">
+        <span class="tag">Monogramme</span>
+        <div class="card-name">Concept F — Le Sceau</div>
+        <div class="card-desc">Monogramme CV dans un cercle dore + wordmark. Comme Louis Vuitton, Chanel, YSL — le monogramme est le signe ultime du prestige.</div>
+      </div>
+      <div class="icons-row">
+        <div class="icon-item"><img src="conceptF-logo-icon.svg" style="width:48px;height:48px;" alt="F icon"><span>48px dark</span></div>
+        <div class="icon-item"><img src="conceptF-logo-icon-light.svg" style="width:48px;height:48px;" alt="F icon light"><span>48px light</span></div>
+        <div class="icon-item"><img src="conceptF-favicon.svg" style="width:32px;height:32px;" alt="F fav"><span>favicon</span></div>
+        <div class="icon-item"><img src="conceptF-favicon.svg" style="width:16px;height:16px;" alt="F fav sm"><span>16px</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview dark">
+        <img src="conceptF-logo-white.svg" alt="Concept F white">
+      </div>
+      <div class="card-info">
+        <div class="card-name">Concept F — Version White</div>
+        <div class="card-desc">Sur fond navy. Le monogramme CV en blanc et or. Le cercle dore reste la signature constante.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Psychology Panel F -->
+  <div class="psy-panel">
+    <h3>Psychologie — Pourquoi ca marche</h3>
+    <div class="psy-grid">
+      <div class="psy-item">
+        <strong>Effet Monogramme (Heritage Bias)</strong>
+        <p>LV, CC, GG, YSL — dans le cerveau francais, un monogramme declenche automatiquement les associations "heritage", "prestige", "etabli". Meme pour une nouvelle marque, le monogramme emprunte cette credibilite.</p>
+      </div>
+      <div class="psy-item">
+        <strong>Forme Circulaire (Trust Heuristic)</strong>
+        <p>Les cercles activent le sentiment de protection et de completude (etudes de Zhang & Liu, 2014). Les sceaux, tampons officiels, et cachets de cire sont TOUS ronds. Le cercle = certification subconsciente.</p>
+      </div>
+      <div class="psy-item">
+        <strong>Contraste Bold/Light (Visual Hierarchy)</strong>
+        <p>C en bold = CALL (l'action, la force). V en light = VANTAGE (le resultat elegant). Le cerveau lit la hierarchie instantanement : l'effort (bold) produit la valeur (light/dore).</p>
+      </div>
+      <div class="psy-item">
+        <strong>Or Metallique (Anchoring Premium)</strong>
+        <p>Le gradient dore declenche le "price anchoring" vers le haut. Etude Nielsen : les consommateurs attribuent +23% de valeur percue aux marques utilisant des accents metalliques.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CONCEPT G — LE DUO ═══════════════ -->
+<div class="concept-block">
+  <div class="concept-row">
+    <div class="card">
+      <div class="card-preview light">
+        <img src="conceptG-logo-primary.svg" alt="Concept G">
+      </div>
+      <div class="card-info">
+        <span class="tag">Minimaliste</span>
+        <div class="card-name">Concept G — Le Duo</div>
+        <div class="card-desc">L'apostrophe = deux traits paralleles (navy + gold). Le call et l'avantage. L'agent et le prospect. Toujours en duo, toujours alignes.</div>
+      </div>
+      <div class="icons-row">
+        <div class="icon-item"><img src="conceptG-logo-icon.svg" style="width:48px;height:48px;" alt="G icon"><span>48px dark</span></div>
+        <div class="icon-item"><img src="conceptG-logo-icon-light.svg" style="width:48px;height:48px;" alt="G icon light"><span>48px light</span></div>
+        <div class="icon-item"><img src="conceptG-favicon.svg" style="width:32px;height:32px;" alt="G fav"><span>favicon</span></div>
+        <div class="icon-item"><img src="conceptG-favicon.svg" style="width:16px;height:16px;" alt="G fav sm"><span>16px</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview dark">
+        <img src="conceptG-logo-white.svg" alt="Concept G white">
+      </div>
+      <div class="card-info">
+        <div class="card-name">Concept G — Version White</div>
+        <div class="card-desc">Sur fond navy. Le trait blanc remplace le navy. Le trait dore reste — signature visuelle constante.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Psychology Panel G -->
+  <div class="psy-panel">
+    <h3>Psychologie — Pourquoi ca marche</h3>
+    <div class="psy-grid">
+      <div class="psy-item">
+        <strong>Processing Fluency (Facilite de Traitement)</strong>
+        <p>Plus un logo est simple a traiter cognitivement, plus il est percu comme fiable. Le cerveau interprete "facile a comprendre" comme "digne de confiance". Deux traits = comprehension instantanee.</p>
+      </div>
+      <div class="psy-item">
+        <strong>Gestalt — Principe de Proximite</strong>
+        <p>Deux elements proches sont percus comme un groupe — une unite. Les deux traits paralleles communiquent "partenariat" et "collaboration" sans un seul mot. Le duo est inseparable.</p>
+      </div>
+      <div class="psy-item">
+        <strong>Von Restorff Isolation Effect</strong>
+        <p>L'element qui differe du groupe est le plus memorable. Dans un wordmark monochrome, les deux traits colores (navy + gold) sont la SEULE rupture. Le cerveau les stocke en priorite.</p>
+      </div>
+      <div class="psy-item">
+        <strong>Lignes Paralleles (Alignement Social)</strong>
+        <p>Les lignes paralleles evoquent la synchronisation, l'harmonie, le "marcher dans la meme direction". En B2B, cela communique subtilement : "nous travaillons AVEC vous, pas pour vous".</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ANCIENS CONCEPTS ═══════════════ -->
+<div class="old-section">
+  <div class="section-title">Concepts precedents (pour reference)</div>
+  <div class="old-grid">
+    <div class="old-card">
+      <div class="card-preview light" style="padding:20px;">
+        <img src="conceptD-logo-primary.svg" alt="D" style="max-height:80px;">
+      </div>
+      <div class="card-info">
+        <div class="card-name">D — The Prism</div>
+      </div>
+    </div>
+    <div class="old-card">
+      <div class="card-preview light" style="padding:20px;">
+        <img src="conceptE-logo-primary.svg" alt="E" style="max-height:80px;">
+      </div>
+      <div class="card-info">
+        <div class="card-name">E — Le Registre</div>
+      </div>
+    </div>
+    <div class="old-card">
+      <div class="card-preview light" style="padding:20px;">
+        <img src="conceptA-logo-primary.svg" alt="A" style="max-height:80px;">
+      </div>
+      <div class="card-info">
+        <div class="card-name">A — L'Accent Dore</div>
+      </div>
+    </div>
+    <div class="old-card">
+      <div class="card-preview light" style="padding:20px;">
+        <img src="conceptB-logo-primary.svg" alt="B" style="max-height:80px;">
+      </div>
+      <div class="card-info">
+        <div class="card-name">B — Verified Mark</div>
+      </div>
+    </div>
+    <div class="old-card">
+      <div class="card-preview light" style="padding:20px;">
+        <img src="conceptC-logo-primary.svg" alt="C" style="max-height:80px;">
+      </div>
+      <div class="card-info">
+        <div class="card-name">C — Le Point de Mire</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

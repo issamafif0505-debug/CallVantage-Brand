@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Concept D: The Prism - Preview</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 20px; font-family: 'Segoe UI', sans-serif; background: #e8e8e8; color: #333; }
+  h1 { font-size: 24px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; color: #0A1628; margin-bottom: 4px; }
+  .sub { font-size: 13px; color: #888; margin-bottom: 40px; }
+  .section { padding: 40px; margin-bottom: 20px; border-radius: 12px; }
+  .light { background: #ffffff; border: 1px solid #e0e0e0; }
+  .dark { background: #0A1628; }
+  .mid { background: #0f1e33; }
+  .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 16px; font-weight: 600; }
+  .dark .label, .mid .label { color: #556677; }
+  .row { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 24px; }
+  .row:last-child { margin-bottom: 0; }
+  .scale-row { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .scale-item { text-align: center; }
+  .scale-item span { display: block; font-size: 10px; color: #aaa; margin-top: 6px; }
+  img { display: block; }
+</style>
+</head>
+<body>
+
+<h1>Concept D: The Prism</h1>
+<p class="sub">The diamond apostrophe. One geometric detail that transforms typography into identity.</p>
+
+<!-- Primary on White -->
+<div class="section light">
+  <div class="label">Primary Logo - Navy on White</div>
+  <div class="row">
+    <img src="conceptD-logo-primary.svg" alt="Primary" style="height:60px">
+  </div>
+  <div class="label" style="margin-top:32px">Scale Test</div>
+  <div class="scale-row">
+    <div class="scale-item"><img src="conceptD-logo-primary.svg" style="width:400px"><span>400px wide</span></div>
+    <div class="scale-item"><img src="conceptD-logo-primary.svg" style="width:200px"><span>200px</span></div>
+    <div class="scale-item"><img src="conceptD-logo-primary.svg" style="width:120px"><span>120px</span></div>
+  </div>
+</div>
+
+<!-- White on Dark -->
+<div class="section dark">
+  <div class="label">White Logo - on Navy Background</div>
+  <div class="row">
+    <img src="conceptD-logo-white.svg" alt="White Logo" style="height:60px">
+  </div>
+  <div class="label" style="margin-top:32px">Scale Test</div>
+  <div class="scale-row">
+    <div class="scale-item"><img src="conceptD-logo-white.svg" style="width:400px"><span style="color:#556677">400px wide</span></div>
+    <div class="scale-item"><img src="conceptD-logo-white.svg" style="width:200px"><span style="color:#556677">200px</span></div>
+    <div class="scale-item"><img src="conceptD-logo-white.svg" style="width:120px"><span style="color:#556677">120px</span></div>
+  </div>
+</div>
+
+<!-- Icons on Light -->
+<div class="section light">
+  <div class="label">Icon Mark - Light Background</div>
+  <div class="row">
+    <img src="conceptD-logo-icon-light.svg" alt="Icon 64" style="height:64px">
+    <img src="conceptD-logo-icon-light.svg" alt="Icon 48" style="height:48px">
+    <img src="conceptD-logo-icon-light.svg" alt="Icon 32" style="height:32px">
+    <img src="conceptD-logo-icon-light.svg" alt="Icon 24" style="height:24px">
+  </div>
+</div>
+
+<!-- Icons on Dark -->
+<div class="section dark">
+  <div class="label">Icon Mark - Dark Background</div>
+  <div class="row">
+    <img src="conceptD-logo-icon.svg" alt="Icon 64" style="height:64px">
+    <img src="conceptD-logo-icon.svg" alt="Icon 48" style="height:48px">
+    <img src="conceptD-logo-icon.svg" alt="Icon 32" style="height:32px">
+    <img src="conceptD-logo-icon.svg" alt="Icon 24" style="height:24px">
+  </div>
+</div>
+
+<!-- Favicon -->
+<div class="section mid">
+  <div class="label">Favicon</div>
+  <div class="row">
+    <img src="conceptD-favicon.svg" alt="Favicon 32" style="height:32px">
+    <img src="conceptD-favicon.svg" alt="Favicon 24" style="height:24px">
+    <img src="conceptD-favicon.svg" alt="Favicon 16" style="height:16px">
+  </div>
+</div>
+
+<!-- Usage context -->
+<div class="section light" style="padding: 60px 40px;">
+  <div class="label">Usage Context: Business Card Header</div>
+  <div style="max-width: 380px; padding: 32px; border: 1px solid #e8e8e8; border-radius: 8px; background: #fafafa;">
+    <img src="conceptD-logo-primary.svg" alt="Logo" style="height: 28px; margin-bottom: 20px;">
+    <div style="font-size: 14px; color: #0A1628; font-weight: 600;">Sophie Martin</div>
+    <div style="font-size: 12px; color: #888; margin-top: 2px;">Directrice des Operations</div>
+    <div style="font-size: 11px; color: #aaa; margin-top: 12px;">+33 1 42 68 53 00 &nbsp;&bull;&nbsp; sophie@callvantage.fr</div>
+  </div>
+</div>
+
+<div class="section dark" style="padding: 60px 40px;">
+  <div class="label">Usage Context: App Header</div>
+  <div style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: #0f1e33; border-radius: 8px; max-width: 500px;">
+    <img src="conceptD-favicon.svg" alt="Favicon" style="height: 28px;">
+    <img src="conceptD-logo-white.svg" alt="Logo" style="height: 22px;">
+    <div style="flex: 1;"></div>
+    <div style="font-size: 12px; color: #556677;">Dashboard</div>
+  </div>
+</div>
+
+</body>
+</html>

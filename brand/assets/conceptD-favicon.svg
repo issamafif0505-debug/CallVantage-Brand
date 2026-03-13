@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CV">
+  <defs>
+    <linearGradient id="dFG" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#00A8E8"/>
+      <stop offset="70%" stop-color="#00A8E8"/>
+      <stop offset="100%" stop-color="#C9A84C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Navy circle background for contrast at small sizes -->
+  <circle cx="16" cy="16" r="15" fill="#0A1628"/>
+
+  <!-- Diamond mark, centered -->
+  <rect x="9" y="9" width="14" height="14" rx="2"
+        fill="url(#dFG)"
+        transform="rotate(45 16 16)"/>
+</svg>

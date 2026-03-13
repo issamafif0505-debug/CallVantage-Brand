@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CALL'VANTAGE monogram">
+  <!--
+    Concept E: "Le Registre" — Icon / Monogram
+    Typographic monogram: C over V, stacked, separated by gold rule.
+    Navy on transparent. For use on light backgrounds.
+    Serif Georgia. No container, no shape — pure letterforms.
+  -->
+  <defs>
+    <linearGradient id="eIconRule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#C9A84C" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#C9A84C" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#C9A84C" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- C — Bold serif -->
+  <text x="32" y="28"
+        font-family="Georgia,'Times New Roman','Palatino Linotype',serif"
+        font-weight="700"
+        font-size="26"
+        fill="#0A1628"
+        letter-spacing="1"
+        text-anchor="middle">C</text>
+
+  <!-- Gold rule -->
+  <line x1="14" y1="33" x2="50" y2="33"
+        stroke="url(#eIconRule)" stroke-width="0.6"/>
+
+  <!-- V — Regular weight serif -->
+  <text x="32" y="54"
+        font-family="Georgia,'Times New Roman','Palatino Linotype',serif"
+        font-weight="400"
+        font-size="24"
+        fill="#0A1628"
+        letter-spacing="1"
+        text-anchor="middle">V</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CALL'VANTAGE icon">
+  <defs>
+    <linearGradient id="dIGL" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#00A8E8"/>
+      <stop offset="70%" stop-color="#00A8E8"/>
+      <stop offset="100%" stop-color="#C9A84C"/>
+    </linearGradient>
+    <!-- Drop shadow for light backgrounds -->
+    <filter id="dShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0A1628" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Diamond mark -->
+  <rect x="16" y="16" width="32" height="32" rx="4"
+        fill="url(#dIGL)"
+        transform="rotate(45 32 32)"
+        filter="url(#dShadow)"/>
+</svg>

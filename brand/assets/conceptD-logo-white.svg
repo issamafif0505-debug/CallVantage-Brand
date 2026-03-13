@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 80" role="img" aria-label="CALL'VANTAGE logo">
+  <defs>
+    <linearGradient id="dWG" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#00A8E8"/>
+      <stop offset="75%" stop-color="#00A8E8"/>
+      <stop offset="100%" stop-color="#C9A84C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CALL -->
+  <text x="18" y="55"
+        font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif"
+        font-weight="700"
+        font-size="42"
+        fill="#F8F9FA"
+        letter-spacing="4">CALL</text>
+
+  <!-- Diamond Apostrophe -->
+  <rect x="172" y="14" width="10" height="10" rx="1.2"
+        fill="url(#dWG)"
+        transform="rotate(45 177 19)"/>
+
+  <!-- VANTAGE -->
+  <text x="191" y="55"
+        font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif"
+        font-weight="700"
+        font-size="42"
+        fill="#F8F9FA"
+        letter-spacing="4">VANTAGE</text>
+</svg>

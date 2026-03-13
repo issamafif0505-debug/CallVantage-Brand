@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Navy background -->
+  <rect width="32" height="32" rx="5" fill="#0A1628"/>
+
+  <!-- Le Duo — simplified -->
+  <line x1="12" y1="22" x2="14" y2="10" stroke="#F8F9FA" stroke-width="3" stroke-linecap="round"/>
+  <line x1="18" y1="22" x2="20" y2="10" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+</svg>

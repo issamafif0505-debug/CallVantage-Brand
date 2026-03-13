@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "brand-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('http').createServer((q,r)=>{const fs=require('fs'),p=require('path'),f=p.join('brand/assets',q.url==='/'?'preview-v3.html':q.url),e=p.extname(f),t={'.html':'text/html','.svg':'image/svg+xml','.css':'text/css'}[e]||'application/octet-stream';fs.readFile(f,(err,d)=>{if(err){r.writeHead(404);r.end('Not found')}else{r.writeHead(200,{'Content-Type':t});r.end(d)}})}).listen(4001,()=>console.log('Preview on http://localhost:4001'))"],
+      "port": 4001
+    },
+    {
+      "name": "next-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "preview-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "out", "-l", "4000"],
+      "port": 4000
+    }
+  ]
+}
