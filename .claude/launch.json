@@ -9,15 +9,15 @@
     },
     {
       "name": "next-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('http').createServer((q,r)=>{const fs=require('fs'),p=require('path'),u=q.url.split('?')[0],base='website/out',candidates=[u,u.replace(/\\/$/,''),u+'/index.html',u.endsWith('/')?u+'index.html':u+'/index.html'];let sent=false;for(const c of candidates){const f=p.join(base,c);if(!sent&&fs.existsSync(f)&&fs.statSync(f).isFile()){const ext=p.extname(f),t={'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.json':'application/json'}[ext]||'application/octet-stream';r.writeHead(200,{'Content-Type':t});fs.createReadStream(f).pipe(r);sent=true;break;}}if(!sent){r.writeHead(404);r.end('Not found');}}).listen(3000,()=>console.log('Next.js static on http://localhost:3000'))"],
       "port": 3000
     },
     {
       "name": "preview-static",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "out", "-l", "4000"],
-      "port": 4000
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('child_process').spawn('C:\\\\Program Files\\\\nodejs\\\\npm.cmd', ['run','start'], {cwd:'website',stdio:'inherit',shell:true})"],
+      "port": 3000
     }
   ]
 }

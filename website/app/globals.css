@@ -1,0 +1,290 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-navy: #0A1628;
+  --color-navy-light: #162340;
+  --color-navy-mid: #1E3A5F;
+  --color-electric: #00A8E8;
+  --color-electric-light: #4DC9F6;
+  --color-electric-dark: #0077B6;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D48B;
+  --color-cv-white: #F8F9FA;
+  --color-cv-grey: #CED4DA;
+  --color-success: #2ECC71;
+  --color-warning: #F39C12;
+  --color-danger: #E74C3C;
+
+  /* Fonts */
+  --font-playfair: var(--font-playfair-display);
+  --font-inter: var(--font-inter);
+  --font-mono: var(--font-dm-mono);
+}
+
+:root {
+  --background: #0A1628;
+  --foreground: #F8F9FA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes for fonts */
+.font-playfair {
+  font-family: var(--font-playfair-display), Georgia, serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-dm-mono), 'Courier New', monospace;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A84C, #E8D48B, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Electric gradient text */
+.text-electric-gradient {
+  background: linear-gradient(135deg, #00A8E8, #4DC9F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.7s ease forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.7s ease forwards;
+}
+
+/* Scroll reveal — hidden by default, JS adds .visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Decorative corner marks */
+.corner-mark {
+  position: relative;
+}
+
+.corner-mark::before,
+.corner-mark::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #C9A84C;
+  border-style: solid;
+  opacity: 0.6;
+}
+
+.corner-mark::before {
+  top: -4px;
+  left: -4px;
+  border-width: 1px 0 0 1px;
+}
+
+.corner-mark::after {
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 1px 1px 0;
+}
+
+/* Thin gold line divider */
+.gold-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A84C, #E8D48B);
+  margin: 1rem auto;
+}
+
+.gold-divider-left {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A84C, #E8D48B);
+  margin: 1rem 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A84C;
+}
+
+/* Button hover effects */
+.btn-gold {
+  background: linear-gradient(135deg, #C9A84C, #E8D48B);
+  color: #0A1628;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #E8D48B, #C9A84C);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.btn-gold:hover::before {
+  left: 0;
+}
+
+.btn-gold span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-electric {
+  background: linear-gradient(135deg, #00A8E8, #0077B6);
+  color: #F8F9FA;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-electric:hover {
+  background: linear-gradient(135deg, #4DC9F6, #00A8E8);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.35);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Geometric decoration */
+.geo-circle {
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Navbar */
+.navbar-scrolled {
+  background: rgba(10, 22, 40, 0.97) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
