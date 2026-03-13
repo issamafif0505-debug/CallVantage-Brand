@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALL'VANTAGE | Guide des Objections</title>
+    <style>
+        /* ============================================
+           CALL'VANTAGE - Guide des Objections
+           Design Premium - Monolithique
+           ============================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #0A1628;
+            --navy-light: #121F36;
+            --navy-mid: #1A2B45;
+            --white: #F8F9FA;
+            --white-soft: #E0E4E8;
+            --gold: #C9A84C;
+            --gold-light: #D4BA6A;
+            --gold-dark: #A8893D;
+            --blue: #00A8E8;
+            --blue-light: #33BBEE;
+            --green: #28A745;
+            --green-bg: #0D2B18;
+            --green-border: #1E5631;
+            --red: #DC3545;
+            --red-bg: #2B0D12;
+            --red-border: #5C1A23;
+            --orange: #FFA726;
+            --orange-bg: #2B1E0D;
+            --orange-border: #5C3E1A;
+            --purple: #9C64E8;
+            --purple-bg: #1A0D2B;
+            --purple-border: #3D1A5C;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.7;
+            font-size: 16px;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border-bottom: 3px solid var(--gold);
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--white); font-weight: 300; }
+
+        .header-badge {
+            background: var(--red);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- NAVIGATION --- */
+        .quick-nav {
+            background: var(--navy-mid);
+            padding: 12px 30px;
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+            position: sticky;
+            top: 73px;
+            z-index: 99;
+        }
+
+        .quick-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--gold-dark);
+            color: var(--gold-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+
+        .nav-link-script {
+            border-color: var(--blue);
+            color: var(--blue-light);
+        }
+
+        .nav-link-script:hover {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+
+        /* --- SEARCH --- */
+        .search-container {
+            max-width: 1100px;
+            margin: 25px auto 0;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            background: var(--navy-mid);
+            border: 2px solid rgba(201,168,76,0.3);
+            border-radius: var(--radius);
+            color: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box::placeholder { color: rgba(248,249,250,0.4); }
+        .search-box:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(201,168,76,0.15); }
+
+        /* --- MAIN --- */
+        .main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 80px;
+        }
+
+        /* --- INTRO --- */
+        .intro-box {
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border: 1px solid var(--gold-dark);
+            border-radius: var(--radius);
+            padding: 22px 28px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-box h2 { color: var(--gold); font-size: 1.15rem; margin-bottom: 10px; }
+        .intro-box p { color: var(--white-soft); font-size: 0.92rem; }
+
+        .golden-rules {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .golden-rules li {
+            color: var(--gold-light);
+            padding: 5px 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .golden-rules li::before {
+            content: "\25C6";
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        /* --- CATEGORIES --- */
+        .category-header {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            padding: 10px 18px;
+            background: var(--navy-mid);
+            border-left: 5px solid var(--gold);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        /* --- OBJECTION CARD --- */
+        .objection-card {
+            background: var(--navy-light);
+            border: 1px solid var(--navy-mid);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .objection-card.hidden { display: none; }
+
+        .objection-trigger {
+            padding: 16px 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .objection-trigger:hover {
+            background: rgba(201,168,76,0.05);
+        }
+
+        .objection-trigger.open {
+            background: var(--navy-mid);
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .objection-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            font-weight: 800;
+        }
+
+        .icon-refus { background: rgba(220,53,69,0.2); color: var(--red); border: 1px solid var(--red-border); }
+        .icon-report { background: rgba(255,167,38,0.2); color: var(--orange); border: 1px solid var(--orange-border); }
+        .icon-doute { background: rgba(0,168,232,0.15); color: var(--blue); border: 1px solid rgba(0,168,232,0.3); }
+        .icon-delegation { background: rgba(156,100,232,0.15); color: var(--purple); border: 1px solid var(--purple-border); }
+        .icon-info { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+
+        .objection-text-group { flex: 1; }
+
+        .objection-prospect-says {
+            color: var(--red);
+            font-weight: 700;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .objection-category-tag {
+            font-size: 0.72rem;
+            color: var(--white-soft);
+            opacity: 0.6;
+            margin-top: 3px;
+        }
+
+        .objection-arrow {
+            color: var(--gold-dark);
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .objection-trigger.open .objection-arrow {
+            transform: rotate(180deg);
+        }
+
+        .objection-body {
+            display: none;
+            padding: 20px 25px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .objection-body.open { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Response / Variante / Tip boxes */
+        .response-box {
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+            border-left: 5px solid var(--green);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+
+        .response-box .label {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .response-box .script {
+            color: #A8E6CF;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .variant-box {
+            background: rgba(0,168,232,0.06);
+            border: 1px solid rgba(0,168,232,0.2);
+            border-left: 5px solid var(--blue);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+
+        .variant-box .label {
+            color: var(--blue);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .variant-box .script {
+            color: var(--blue-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .tip-box {
+            background: var(--orange-bg);
+            border: 1px solid var(--orange-border);
+            border-left: 5px solid var(--orange);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+
+        .tip-box .label {
+            color: var(--orange);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .tip-box p {
+            color: #FFD699;
+            font-size: 0.88rem;
+        }
+
+        /* --- DIFFICULTY INDICATOR --- */
+        .difficulty {
+            display: inline-flex;
+            gap: 3px;
+            margin-left: 8px;
+        }
+
+        .diff-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .diff-dot.active-easy { background: var(--green); }
+        .diff-dot.active-medium { background: var(--orange); }
+        .diff-dot.active-hard { background: var(--red); }
+
+        /* --- NO RESULTS --- */
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--white-soft);
+            opacity: 0.5;
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: rgba(248,249,250,0.3);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(201,168,76,0.15);
+            margin-top: 40px;
+        }
+
+        .footer strong { color: var(--gold-dark); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .quick-nav-inner { justify-content: center; }
+            .objection-trigger { padding: 12px 14px; }
+            .objection-body { padding: 14px 16px; }
+            .main { padding: 15px 10px 60px; }
+        }
+
+        /* --- PRINT --- */
+        @media print {
+            body { background: white; color: #222; font-size: 10pt; }
+            .header, .quick-nav, .footer, .search-container { display: none; }
+            .objection-body { display: block !important; }
+            .objection-card { border: 1px solid #ccc; page-break-inside: avoid; }
+            .objection-trigger { background: #f5f5f5; }
+            .objection-prospect-says { color: #c62828; }
+            .response-box { background: #e8f5e9; border-color: #66bb6a; }
+            .response-box .script { color: #2e7d32; }
+            .variant-box { background: #e3f2fd; border-color: #42a5f5; }
+            .variant-box .script { color: #1565c0; }
+            .tip-box { background: #fff3e0; border-color: #ffa726; }
+            .tip-box p { color: #e65100; }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-content">
+        <div class="logo">CALL'VANTAGE <span>| Objections</span></div>
+        <div class="header-badge">GUIDE DE REPONSE</div>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav class="quick-nav">
+    <div class="quick-nav-inner">
+        <a href="#cat-refus" class="nav-btn">Refus directs</a>
+        <a href="#cat-report" class="nav-btn">Reports / delais</a>
+        <a href="#cat-doute" class="nav-btn">Doutes / satisfaction</a>
+        <a href="#cat-delegation" class="nav-btn">Delegation</a>
+        <a href="#cat-info" class="nav-btn">Questions sur nous</a>
+        <a href="script-principal.html" class="nav-btn nav-link-script">Retour au script</a>
+    </div>
+</nav>
+
+<!-- SEARCH -->
+<div class="search-container">
+    <input type="text" class="search-box" id="searchInput" placeholder="Rechercher une objection (ex: pas le temps, email, satisfait, commission...)" oninput="filterObjections()">
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+    <div class="intro-box">
+        <h2>Les 5 regles d'or face aux objections</h2>
+        <p>Chaque objection est une opportunite deguisee. Un prospect qui objecte est un prospect qui ecoute.</p>
+        <ul class="golden-rules">
+            <li>Ne jamais contredire frontalement le prospect</li>
+            <li>Accuser reception avec empathie : "Je comprends", "C'est tout a fait normal"</li>
+            <li>Reformuler l'objection pour montrer que vous avez ecoute</li>
+            <li>Repondre avec un argument concret, pas une generalite</li>
+            <li>Toujours terminer par une question ou une proposition de creneau</li>
+        </ul>
+    </div>
+
+    <!-- ===========================
+         CATEGORIE : REFUS DIRECTS
+         =========================== -->
+    <div class="category-header" id="cat-refus">Refus directs</div>
+
+    <!-- OBJ 1 : Pas le temps -->
+    <div class="objection-card" data-keywords="pas le temps occupe presse urgent busy minute">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-refus">1</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Je n'ai pas le temps"</div>
+                <div class="objection-category-tag">Refus &mdash; Frequence elevee
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je comprends parfaitement, vous avez un emploi du temps charge. Justement, c'est pour ca que je ne vous prends que 30 secondes maintenant. L'idee, c'est simplement de caler un creneau de 20 minutes avec notre courtier, a un moment qui vous arrange, pour voir si on peut reduire vos factures d'energie. Ca vous irait plutot en debut de semaine prochaine, ou en fin de semaine ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Pas de souci, justement je serai bref. En une phrase : on fait economiser en moyenne 15% sur les factures d'energie des professionnels comme vous, gratuitement. Est-ce que je peux vous proposer un creneau de 20 minutes la semaine prochaine ?"</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Reduisez immediatement la perception du temps investi : "30 secondes", "en une phrase", "un creneau de 20 minutes". L'objectif est de montrer que l'investissement en temps est minimal par rapport au gain potentiel.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 2 : Pas interesse -->
+    <div class="objection-card" data-keywords="pas interesse interesse non merci non ca va aller">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-refus">2</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Je ne suis pas interesse"</div>
+                <div class="objection-category-tag">Refus &mdash; Frequence elevee
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je comprends, et c'est une reaction tout a fait normale quand on recoit un appel. Mais laissez-moi vous poser une seule question : est-ce que vous seriez contre l'idee d'economiser 10 a 20% sur vos factures d'energie, sans changer vos habitudes et sans que ca vous coute quoi que ce soit ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Pas de probleme. Mais est-ce que ca ne vous interesse pas, ou est-ce que c'est surtout que le moment n'est pas ideal ? Parce que si c'est une question de timing, je peux vous rappeler a un meilleur moment."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>80% des "pas interesse" sont des reflexes de protection, pas un vrai rejet. Distinguez le vrai desinteret de l'objection reflexe en reformulant la valeur sous forme de question. Si le prospect dit non une deuxieme fois, remerciez poliment et passez au suivant.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 3 : On m'appelle tout le temps -->
+    <div class="objection-card" data-keywords="appelle tout le temps demarchage telephone trop souvent harcele">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-refus">3</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"On m'appelle tout le temps pour ca"</div>
+                <div class="objection-category-tag">Refus &mdash; Frequence elevee
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je comprends votre agacement, et justement, c'est pour ca que notre approche est differente. Nous ne sommes pas un fournisseur d'energie qui veut vous vendre son offre. Nous sommes un cabinet de courtage independant : on compare TOUS les fournisseurs pour vous et on negocie le meilleur tarif. C'est gratuit, sans engagement, et ca vous evite justement de recevoir dix appels differents. Est-ce qu'on peut en discuter 20 minutes ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Oui, je sais que les professionnels sont tres sollicites sur ce sujet, et ca montre bien a quel point le marche de l'energie est devenu complexe. C'est precisement pour ca qu'un courtier independant comme le notre peut faire la difference : on fait le tri pour vous, une bonne fois pour toutes."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Validez l'agacement puis differenciez-vous des fournisseurs. Le positionnement "courtier independant" est votre meilleure arme ici : vous etes DU COTE du prospect, pas du fournisseur. Vous etes la solution au probleme des appels multiples.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+         CATEGORIE : REPORTS / DELAIS
+         =========================== -->
+    <div class="category-header" id="cat-report">Reports et delais</div>
+
+    <!-- OBJ 4 : Envoyez un email -->
+    <div class="objection-card" data-keywords="email mail envoyer courrier document ecrivez envoyez">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-report">4</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Envoyez-moi un email"</div>
+                <div class="objection-category-tag">Report &mdash; Frequence tres elevee
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Bien sur, je peux vous envoyer un email. Mais comme chaque situation est differente, un email generique ne vous apportera pas grand-chose. Ce que notre courtier fait, c'est une analyse personnalisee de VOS contrats et VOS factures. Ca prend 20 minutes par telephone, et c'est bien plus utile qu'un email standard. On peut caler ca quand, cette semaine ou la semaine prochaine ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Je note votre email avec plaisir. Mais vous savez comment c'est, les emails commerciaux finissent souvent dans les spams ou non lus. En 20 minutes de telephone, notre courtier peut deja vous dire combien vous pourriez economiser concretement. C'est gratuit, quand est-ce que ca vous arrangerait ?"</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Acceptez la demande d'email, mais orientez vers le telephone. Si le prospect insiste vraiment, prenez l'email ET proposez quand meme un creneau. Envoyez ensuite un email d'introduction avec une proposition de RDV integree.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 5 : Rappelez plus tard -->
+    <div class="objection-card" data-keywords="rappeler plus tard rappelle moment demain semaine autre fois">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-report">5</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Rappelez-moi plus tard"</div>
+                <div class="objection-category-tag">Report &mdash; Frequence tres elevee
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Bien sur, avec plaisir ! Quel moment vous arrangerait le mieux ? Plutot en debut de semaine en matinee, ou en fin de semaine en debut d'apres-midi ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante (aller plus loin)</div>
+                <p class="script">"Pas de souci, je vous rappelle avec plaisir. Mais en 30 secondes, est-ce que je peux juste vous poser une question ? Savez-vous quand votre contrat d'energie arrive a echeance ? Comme ca, je vous rappelle exactement au bon moment."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>TOUJOURS fixer une date et un creneau precis. "Plus tard" ne veut rien dire en concret. Verrouillez un jour et une heure, notez-le dans votre agenda. Profitez-en pour poser UNE question de qualification avant de raccrocher.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+         CATEGORIE : DOUTES / SATISFACTION
+         =========================== -->
+    <div class="category-header" id="cat-doute">Doutes et satisfaction</div>
+
+    <!-- OBJ 6 : Satisfait -->
+    <div class="objection-card" data-keywords="satisfait content fournisseur ca va bien satisfaite heureux">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">6</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Je suis satisfait de mon fournisseur"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence elevee
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot active-easy"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Et c'est tres bien ! L'idee n'est pas de critiquer votre fournisseur. D'ailleurs, il est possible qu'apres l'analyse, vous restiez chez lui. Mais au moins vous aurez la certitude de payer le juste prix. Beaucoup de nos clients etaient satisfaits aussi, et pourtant ils payaient 15 a 20% de plus que les tarifs du marche. En 20 minutes, on en a le coeur net. Qu'en dites-vous ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Etre satisfait du service, c'est une chose. Mais est-ce que vous etes certain de payer le meilleur prix ? C'est un peu comme l'assurance auto : on peut etre content de son assureur, mais ca ne veut pas dire qu'on ne peut pas trouver la meme couverture 20% moins cher."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Ne denigrez JAMAIS le fournisseur actuel. Focalisez sur le tarif et la comparaison. L'analogie avec l'assurance fonctionne tres bien car tout le monde comprend ce mecanisme.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 7 : Engage -->
+    <div class="objection-card" data-keywords="engage engagement contrat en cours duree bloque lie">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">7</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Je suis deja engage"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Justement, c'est le meilleur moment pour anticiper. La plupart des contrats pro ont des clauses de reconduction automatique, et si on ne s'y prend pas 2 a 3 mois avant l'echeance, vous etes reconduit aux conditions du fournisseur, souvent moins avantageuses. Notre courtier peut analyser votre contrat maintenant pour etre pret au bon moment. Votre contrat se termine quand exactement ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Bien sur, et on ne vous demande pas de rompre quoi que ce soit. L'idee c'est de preparer la suite pour que le jour ou votre contrat arrive a echeance, vous ayez deja la meilleure offre en main. Ca se prepare en amont."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>L'engagement est une OPPORTUNITE, pas un blocage. Recuperez la date d'echeance. Si elle est dans les 12 mois, le prospect est ideal. Plus lointaine, proposez un audit preparatoire et programmez un rappel.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 8 : Vient de changer -->
+    <div class="objection-card" data-keywords="viens changer change juste recemment nouveau recent signe">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">8</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Je viens de changer de fournisseur"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"D'accord, et est-ce que vous avez fait appel a un courtier pour comparer ou vous avez choisi directement ? Parce que meme avec un nouveau contrat, notre courtier peut verifier que vous avez obtenu les meilleures conditions. C'est gratuit, et si tout est bon, au moins vous aurez l'esprit tranquille."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Je comprends. Et ca date de quand exactement ? Ca peut etre interessant de noter votre prochaine echeance pour qu'on vous recontacte au bon moment. Ca vous eviterait de devoir tout refaire seul. Je note votre echeance ?"</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Ce prospect est a rappeler plus tard. Recuperez la date du nouveau contrat pour calculer la prochaine echeance et programmez un rappel. En attendant, proposez un "audit de verification" rapide.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 9 : EDF / historique -->
+    <div class="objection-card" data-keywords="edf historique tarif reglemente bleu toujours ete regulier">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">9</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"J'ai un contrat EDF / tarif historique"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Les tarifs reglementes, c'est rassurant, je comprends. Mais saviez-vous que ces tarifs ont beaucoup augmente ces dernieres annees, et que des offres de marche sont souvent plus competitives pour les professionnels ? Notre courtier peut comparer votre tarif EDF actuel avec ce qui existe sur le marche. Si EDF reste le meilleur choix, vous le saurez. Sinon, vous aurez des alternatives concretes. Ca vaut 20 minutes, non ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"EDF, c'est une reference, bien sur. Mais EDF propose aussi des offres de marche a des tarifs differents du reglemente. Meme en restant chez EDF, on peut parfois trouver mieux. C'est justement ce que notre courtier peut verifier."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Ne critiquez jamais EDF. Montrez que la comparaison peut meme valider leur choix actuel, ou reveler des offres EDF marche plus avantageuses. L'attachement au tarif reglemente est souvent emotionnel et lie a la confiance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 10 : Commission courtier -->
+    <div class="objection-card" data-keywords="commission courtier marge prend combien gratuit piege arnaque">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">10</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Les courtiers prennent trop de commission"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence faible
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"C'est une question tout a fait legitime. Notre courtier est remunere par le fournisseur que vous choisissez, pas par vous. Ca ne vous coute strictement rien. Et le tarif obtenu est souvent meilleur que celui que vous obtiendriez seul, parce qu'il negocie des volumes importants pour de nombreux clients. C'est le meme principe qu'un courtier en credit immobilier : il obtient des taux que vous n'auriez pas en allant directement a la banque."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Je comprends cette inquietude. Concretement, la commission du courtier est payee par le fournisseur et deja integree dans le tarif. Que vous passiez par un courtier ou non, le fournisseur inclut de toute facon ce cout. Autant en profiter pour avoir quelqu'un qui negocie dans votre interet."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>L'analogie avec le courtier immobilier ou l'agent d'assurance fonctionne toujours bien. Insistez sur le fait que c'est GRATUIT pour le client. Le courtier a interet a trouver la meilleure offre car c'est sa reputation professionnelle qui est en jeu.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 11 : C'est gratuit, il y a un piege -->
+    <div class="objection-card" data-keywords="gratuit piege cache croit pas trop beau vrai pourquoi">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-doute">11</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"C'est gratuit ? Il y a forcement un piege"</div>
+                <div class="objection-category-tag">Doute &mdash; Frequence faible
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"C'est une question tres saine, et ca prouve que vous etes prudent. Non, il n'y a aucun piege. Le modele est simple : si vous changez de fournisseur suite aux recommandations du courtier, c'est le nouveau fournisseur qui le remunere. Si vous ne changez pas, ca ne vous coute rien non plus. Le courtier a tout interet a trouver la meilleure offre, parce que c'est sa credibilite qui est en jeu."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Aucun piege, je vous l'assure. C'est le meme modele que les comparateurs d'assurance en ligne : le service est gratuit pour vous, et c'est le fournisseur selectionne qui verse une commission. Vous n'avez absolument rien a perdre, et tout a gagner."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>La transparence totale est votre meilleure arme. Expliquez le modele economique clairement. Un prospect qui pose cette question est en fait un prospect interesse qui a besoin d'etre rassure.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+         CATEGORIE : DELEGATION
+         =========================== -->
+    <div class="category-header" id="cat-delegation">Delegation a un tiers</div>
+
+    <!-- OBJ 12 : Pas moi qui gere -->
+    <div class="objection-card" data-keywords="pas moi gere autre personne quelqu'un decideur responsable">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-delegation">12</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Ce n'est pas moi qui gere"</div>
+                <div class="objection-category-tag">Delegation &mdash; Frequence elevee
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je comprends tout a fait. Pourriez-vous me donner le nom de la personne qui s'occupe des contrats d'energie ? Et quel serait le meilleur moment pour la joindre ? C'est le meme numero de telephone ou elle a un numero direct ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Pas de souci du tout. Est-ce que c'est le gerant, le directeur, ou peut-etre le comptable qui gere cette partie ? J'aimerais echanger directement avec la bonne personne pour ne pas vous faire perdre votre temps."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Ce n'est PAS un echec, c'est une mine d'or de qualification. Recuperez : le nom complet du decideur, son poste, son numero direct, le meilleur horaire pour le joindre. Remerciez chaleureusement et notez tout soigneusement.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 13 : Mon comptable -->
+    <div class="objection-card" data-keywords="comptable expert cabinet gere facturation charges expert-comptable">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-delegation">13</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Mon comptable s'en occupe"</div>
+                <div class="objection-category-tag">Delegation &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je comprends, et c'est logique de deleguer ca. Mais generalement, le comptable gere la facturation et la comptabilite, pas la negociation des contrats d'energie. Notre courtier est specialise dans ce domaine precis et peut obtenir des tarifs que meme un excellent comptable ne connait pas forcement. En tant que gerant, est-ce que vous seriez ouvert a un echange rapide de 20 minutes pour verifier s'il y a un potentiel d'economies ?"</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Votre comptable fait un travail essentiel, c'est certain. Mais son expertise c'est la comptabilite, pas la negociation energetique. Notre courtier vient completer son travail en obtenant des conditions preferentielles. D'ailleurs, est-ce que votre comptable a deja fait une mise en concurrence des fournisseurs d'energie recemment ?"</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Ne denigrez jamais le comptable. Positionnez le courtier comme un COMPLEMENT, pas un remplacement. La decision finale sur les contrats revient au gerant, pas au comptable. Recentrez sur le decideur.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+         CATEGORIE : QUESTIONS SUR NOUS
+         =========================== -->
+    <div class="category-header" id="cat-info">Questions sur CALL'VANTAGE</div>
+
+    <!-- OBJ 14 : C'est quoi votre societe -->
+    <div class="objection-card" data-keywords="societe entreprise qui etes vous c'est quoi representez">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-info">14</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"C'est quoi votre societe ?"</div>
+                <div class="objection-category-tag">Information &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"CALL'VANTAGE est un cabinet de courtage specialise en energie pour les professionnels. On travaille avec tous les fournisseurs du marche francais : EDF, Engie, TotalEnergies, Vattenfall, ENI, et d'autres. Notre role, c'est de comparer toutes les offres pour trouver la plus avantageuse pour VOTRE situation specifique. C'est gratuit pour vous et totalement sans engagement."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante (plus concise)</div>
+                <p class="script">"En resume, on fait pour vos factures d'electricite et de gaz ce qu'un courtier fait pour votre credit immobilier : on negocie le meilleur tarif aupres de tous les fournisseurs, gratuitement."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Un prospect qui pose des questions est un prospect INTERESSE. C'est un signal tres positif. Repondez clairement et brievement, puis redirigez vers la proposition de RDV. Ne noyez pas le prospect dans les details sur la societe.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 15 : Vous appelez d'ou -->
+    <div class="objection-card" data-keywords="appelez ou d'ou maroc etranger offshore centre appel localisation pays">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-info">15</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Vous appelez d'ou ?"</div>
+                <div class="objection-category-tag">Information &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span><span class="diff-dot active-medium"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Je vous contacte de la part du cabinet CALL'VANTAGE. Notre equipe prend les premiers contacts avec les professionnels pour les mettre en relation avec nos courtiers partenaires. Le courtier qui vous rappellera est base en France et connait parfaitement le marche francais de l'energie. C'est lui qui fera l'analyse complete de votre situation."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Mon role c'est de prendre contact avec les professionnels comme vous pour evaluer si une optimisation de vos contrats d'energie est possible. Le courtier specialise qui vous accompagnera intervient directement en France avec les fournisseurs francais."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Restez transparent sans entrer dans les details geographiques. Recentrez immediatement sur la valeur : le courtier francais qui fera le travail concret. Ne vous justifiez pas et ne vous excusez pas. Votre professionnalisme et votre expertise parlent pour vous.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJ 16 : Comment avez-vous eu mon numero -->
+    <div class="objection-card" data-keywords="numero comment eu fichier appel donnees telephone obtenu rgpd">
+        <div class="objection-trigger" onclick="toggleObjection(this)">
+            <div class="objection-icon icon-info">16</div>
+            <div class="objection-text-group">
+                <div class="objection-prospect-says">"Comment avez-vous eu mon numero ?"</div>
+                <div class="objection-category-tag">Information &mdash; Frequence moyenne
+                    <span class="difficulty"><span class="diff-dot active-easy"></span><span class="diff-dot active-easy"></span><span class="diff-dot"></span></span>
+                </div>
+            </div>
+            <div class="objection-arrow">&#9660;</div>
+        </div>
+        <div class="objection-body">
+            <div class="response-box">
+                <div class="label">Reponse recommandee</div>
+                <p class="script">"Vos coordonnees sont publiques, elles figurent dans les annuaires professionnels et registres d'entreprises. Nous contactons les professionnels de votre secteur car ce sont les profils pour lesquels les economies d'energie sont les plus significatives. Bien entendu, si vous ne souhaitez pas etre recontacte, je le note immediatement."</p>
+            </div>
+            <div class="variant-box">
+                <div class="label">Variante</div>
+                <p class="script">"Votre numero est reference dans les annuaires professionnels. Nous ciblons specifiquement les professionnels de votre secteur car ce sont des activites qui ont des consommations d'energie importantes, et donc un fort potentiel d'economies."</p>
+            </div>
+            <div class="tip-box">
+                <div class="label">Astuce</div>
+                <p>Soyez transparent et rassurant. Mentionnez les sources publiques (annuaires, registres). Proposez immediatement le retrait si le prospect le souhaite (obligation RGPD). Puis revenez rapidement au sujet principal : les economies concretes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="noResults">
+        Aucune objection ne correspond a votre recherche. Essayez un autre mot-cle.
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p><strong>CALL'VANTAGE</strong> &mdash; Guide des Objections &mdash; Courtage Energie B2B</p>
+    <p>Document interne &mdash; Confidentiel &mdash; Ne pas diffuser</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+    function toggleObjection(trigger) {
+        const body = trigger.nextElementSibling;
+        const isOpen = trigger.classList.contains('open');
+
+        // Fermer toutes les objections
+        document.querySelectorAll('.objection-trigger').forEach(function(t) {
+            t.classList.remove('open');
+            t.nextElementSibling.classList.remove('open');
+        });
+
+        // Ouvrir celle cliquee si elle etait fermee
+        if (!isOpen) {
+            trigger.classList.add('open');
+            body.classList.add('open');
+            setTimeout(function() {
+                trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    function filterObjections() {
+        var query = document.getElementById('searchInput').value.toLowerCase().trim();
+        var cards = document.querySelectorAll('.objection-card');
+        var categories = document.querySelectorAll('.category-header');
+        var visibleCount = 0;
+
+        cards.forEach(function(card) {
+            var keywords = card.getAttribute('data-keywords') || '';
+            var prospectSays = '';
+            var el = card.querySelector('.objection-prospect-says');
+            if (el) prospectSays = el.textContent;
+            var searchText = (keywords + ' ' + prospectSays).toLowerCase();
+
+            if (query === '' || searchText.indexOf(query) !== -1) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Masquer/afficher les en-tetes de categories sans enfants visibles
+        categories.forEach(function(cat) {
+            var nextEl = cat.nextElementSibling;
+            var hasVisible = false;
+            while (nextEl && !nextEl.classList.contains('category-header')) {
+                if (nextEl.classList.contains('objection-card') && !nextEl.classList.contains('hidden')) {
+                    hasVisible = true;
+                    break;
+                }
+                nextEl = nextEl.nextElementSibling;
+            }
+            cat.style.display = hasVisible ? 'block' : 'none';
+        });
+
+        document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    // Navigation smooth scroll
+    document.querySelectorAll('.nav-btn[href^="#"]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

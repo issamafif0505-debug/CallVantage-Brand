@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CALL'VANTAGE — Carte de Visite</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #e9ecef;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6c757d;
+  }
+
+  /* Business card dimensions: 85mm x 55mm at 96dpi = 322px x 208px */
+  /* For print at 300dpi: 1004px x 650px — we use a scaled version */
+  .card-container {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .business-card {
+    width: 340px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+  }
+
+  /* ===== RECTO ===== */
+  .card-front {
+    background: #0A1628;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+  .card-front .monogram {
+    width: 56px;
+    height: 56px;
+    border: 1.5px solid #C9A84C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .card-front .monogram span {
+    font-family: Georgia, 'Palatino Linotype', serif;
+    font-size: 20px;
+    color: #F8F9FA;
+    font-weight: 700;
+  }
+  .card-front .monogram span em {
+    font-style: normal;
+    font-weight: 400;
+    color: #C9A84C;
+  }
+  .card-front .brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #F8F9FA;
+  }
+  .card-front .brand-name span {
+    color: #C9A84C;
+  }
+  .card-front .tagline {
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b949e;
+    margin-top: 6px;
+  }
+  /* Gold accent line */
+  .card-front::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  }
+
+  /* ===== VERSO ===== */
+  .card-back {
+    background: #F8F9FA;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-back .person-info {
+    margin-bottom: 8px;
+  }
+  .card-back .person-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0A1628;
+    margin-bottom: 2px;
+  }
+  .card-back .person-title {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #C9A84C;
+    font-weight: 600;
+  }
+  .card-back .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+    font-size: 9px;
+    color: #495057;
+  }
+  .card-back .contact-grid .label {
+    font-size: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #adb5bd;
+    font-weight: 600;
+  }
+  .card-back .brand-mini {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0A1628;
+    text-align: right;
+  }
+  .card-back .brand-mini span {
+    color: #C9A84C;
+  }
+  /* Navy accent line top */
+  .card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #0A1628;
+  }
+
+  .note {
+    font-size: 12px;
+    color: #868e96;
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .business-card { box-shadow: none; border: 0.5px solid #ccc; }
+    h2, .note { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<h2>Carte de visite — Recto / Verso</h2>
+
+<div class="card-container">
+
+  <!-- RECTO -->
+  <div class="business-card card-front">
+    <div class="monogram">
+      <span>C<em>V</em></span>
+    </div>
+    <div class="brand-name">CALL<span>'</span>VANTAGE</div>
+    <div class="tagline">Rendez-vous qualifies &bull; Energie B2B</div>
+  </div>
+
+  <!-- VERSO -->
+  <div class="business-card card-back">
+    <div class="person-info">
+      <div class="person-name">[Prenom Nom]</div>
+      <div class="person-title">[Directeur Commercial]</div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="label">Telephone</div>
+        +212 664 860 353
+      </div>
+      <div>
+        <div class="label">Email</div>
+        [email@callvantage.com]
+      </div>
+      <div>
+        <div class="label">Adresse</div>
+        Gueliz, Marrakech
+      </div>
+      <div>
+        <div class="label">Web</div>
+        [www.callvantage.com]
+      </div>
+    </div>
+    <div class="brand-mini">CALL<span>'</span>VANTAGE</div>
+  </div>
+
+</div>
+
+<p class="note">
+  <strong>Format :</strong> 85 &times; 55 mm (standard europeen).<br>
+  Remplace les champs entre crochets par tes informations.<br>
+  Imprime cette page depuis le navigateur (Ctrl+P) ou exporte en PDF.
+</p>
+
+</body>
+</html>

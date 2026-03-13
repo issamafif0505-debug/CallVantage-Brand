@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALL'VANTAGE | Script d'Appel Principal</title>
+    <style>
+        /* ============================================
+           CALL'VANTAGE - Script d'Appel Principal
+           Design Premium - Monolithique
+           ============================================ */
+
+        /* --- RESET & BASE --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #0A1628;
+            --navy-light: #121F36;
+            --navy-mid: #1A2B45;
+            --white: #F8F9FA;
+            --white-soft: #E0E4E8;
+            --gold: #C9A84C;
+            --gold-light: #D4BA6A;
+            --gold-dark: #A8893D;
+            --blue: #00A8E8;
+            --blue-light: #33BBEE;
+            --blue-dark: #0088BB;
+            --green: #28A745;
+            --green-bg: #0D2B18;
+            --green-border: #1E5631;
+            --red: #DC3545;
+            --red-bg: #2B0D12;
+            --red-border: #5C1A23;
+            --orange: #FFA726;
+            --orange-bg: #2B1E0D;
+            --orange-border: #5C3E1A;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.7;
+            font-size: 16px;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border-bottom: 3px solid var(--gold);
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        .header-badge {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- NAVIGATION RAPIDE --- */
+        .quick-nav {
+            background: var(--navy-mid);
+            padding: 12px 30px;
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+            position: sticky;
+            top: 73px;
+            z-index: 99;
+        }
+
+        .quick-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--gold-dark);
+            color: var(--gold-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+
+        .nav-btn .nav-num {
+            background: rgba(201,168,76,0.3);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .nav-btn:hover .nav-num, .nav-btn.active .nav-num {
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+        /* --- MAIN --- */
+        .main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 80px;
+        }
+
+        /* --- INTRO --- */
+        .intro-box {
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border: 1px solid var(--gold-dark);
+            border-radius: var(--radius);
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-box h2 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .intro-box p {
+            color: var(--white-soft);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 8px;
+        }
+
+        .checklist li {
+            color: var(--white-soft);
+            padding: 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .checklist li::before {
+            content: "\2713";
+            color: var(--green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* --- SECTIONS ACCORDEON --- */
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border: 1px solid var(--navy-mid);
+            border-left: 5px solid var(--gold);
+            border-radius: var(--radius);
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+            user-select: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .section-header:hover {
+            background: var(--navy-mid);
+            border-color: var(--gold-dark);
+        }
+
+        .section-header.open {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-color: var(--gold);
+            background: var(--navy-mid);
+        }
+
+        .section-number {
+            background: var(--gold);
+            color: var(--navy);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .section-title-group {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            margin-top: 2px;
+        }
+
+        .section-arrow {
+            font-size: 1.2rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.open .section-arrow {
+            transform: rotate(180deg);
+        }
+
+        .section-body {
+            display: none;
+            background: var(--navy-light);
+            border: 1px solid var(--navy-mid);
+            border-top: none;
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            padding: 25px 30px;
+            animation: slideDown 0.3s ease;
+        }
+
+        .section-body.open {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ENCADRES A DIRE / A NE PAS DIRE --- */
+        .say-box {
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .say-box .say-label {
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .say-box p, .say-box li {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* A DIRE */
+        .say-do {
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+            border-left: 5px solid var(--green);
+        }
+
+        .say-do .say-label {
+            color: var(--green);
+        }
+
+        .say-do .script-text {
+            color: #A8E6CF;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        /* A NE PAS DIRE */
+        .say-dont {
+            background: var(--red-bg);
+            border: 1px solid var(--red-border);
+            border-left: 5px solid var(--red);
+        }
+
+        .say-dont .say-label {
+            color: var(--red);
+        }
+
+        .say-dont .script-text {
+            color: #F5A3AA;
+            text-decoration: line-through;
+            opacity: 0.85;
+        }
+
+        /* ASTUCE / TIP */
+        .tip-box {
+            background: var(--orange-bg);
+            border: 1px solid var(--orange-border);
+            border-left: 5px solid var(--orange);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .tip-box .tip-label {
+            color: var(--orange);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-box p {
+            color: #FFD699;
+            font-size: 0.9rem;
+        }
+
+        /* INFO BOX */
+        .info-box {
+            background: rgba(0,168,232,0.08);
+            border: 1px solid rgba(0,168,232,0.25);
+            border-left: 5px solid var(--blue);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .info-box .info-label {
+            color: var(--blue);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .info-box p, .info-box li {
+            color: var(--blue-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- ARBRE DE DECISION --- */
+        .decision-tree {
+            margin: 20px 0;
+        }
+
+        .decision-node {
+            background: var(--navy-mid);
+            border: 1px solid rgba(201,168,76,0.3);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 12px 0;
+        }
+
+        .decision-question {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .decision-paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .decision-path {
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+        }
+
+        .path-yes {
+            background: rgba(40,167,69,0.12);
+            border: 1px solid var(--green-border);
+        }
+
+        .path-yes .path-label {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+
+        .path-no {
+            background: rgba(220,53,69,0.1);
+            border: 1px solid var(--red-border);
+        }
+
+        .path-no .path-label {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+
+        .path-action {
+            color: var(--white-soft);
+            line-height: 1.6;
+        }
+
+        /* --- VARIANTE TOGGLE --- */
+        .variant-toggle {
+            display: inline-flex;
+            background: var(--navy-mid);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+            border: 1px solid rgba(201,168,76,0.3);
+        }
+
+        .variant-btn {
+            padding: 8px 20px;
+            border: none;
+            background: transparent;
+            color: var(--white-soft);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .variant-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .variant-content {
+            display: none;
+        }
+
+        .variant-content.active {
+            display: block;
+        }
+
+        /* --- SOUS-SECTIONS --- */
+        h3 {
+            color: var(--gold);
+            font-size: 1.05rem;
+            margin: 25px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+        }
+
+        h4 {
+            color: var(--blue-light);
+            font-size: 0.95rem;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            color: var(--white-soft);
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            color: var(--white-soft);
+            margin-bottom: 6px;
+            font-size: 0.93rem;
+        }
+
+        strong {
+            color: var(--white);
+        }
+
+        /* --- RECAP TABLE --- */
+        .recap-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .recap-table th {
+            background: var(--navy-mid);
+            color: var(--gold);
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold-dark);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .recap-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--white-soft);
+        }
+
+        .recap-table tr:hover td {
+            background: rgba(201,168,76,0.05);
+        }
+
+        .recap-field {
+            color: var(--blue-light);
+            font-weight: 600;
+        }
+
+        /* --- SEPARATEUR --- */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+            margin: 25px 0;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: rgba(248,249,250,0.3);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(201,168,76,0.15);
+            margin-top: 40px;
+        }
+
+        .footer strong {
+            color: var(--gold-dark);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .quick-nav-inner { justify-content: center; }
+            .decision-paths { grid-template-columns: 1fr; }
+            .checklist { grid-template-columns: 1fr; }
+            .section-header { padding: 14px 18px; }
+            .section-body { padding: 18px 16px; }
+            .main { padding: 20px 12px 60px; }
+        }
+
+        /* --- PRINT --- */
+        @media print {
+            body { background: white; color: #222; font-size: 11pt; }
+            .header, .quick-nav, .footer { display: none; }
+            .section-body { display: block !important; }
+            .section-header { background: #f5f5f5; border-color: #ccc; color: #222; page-break-after: avoid; }
+            .section-title, .section-subtitle { color: #333; }
+            .section-number { background: #333; color: white; }
+            .say-do { background: #e8f5e9; border-color: #66bb6a; }
+            .say-do .script-text { color: #2e7d32; }
+            .say-dont { background: #ffebee; border-color: #ef5350; }
+            .say-dont .script-text { color: #c62828; }
+            .tip-box { background: #fff3e0; border-color: #ffa726; }
+            .info-box { background: #e3f2fd; border-color: #42a5f5; }
+            .decision-node { background: #fafafa; border-color: #ccc; }
+            .nav-btn { display: none; }
+            .section { page-break-inside: avoid; }
+        }
+
+        /* --- SCROLLBAR --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+        /* -- STATUS BADGE -- */
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .status-ok { background: rgba(40,167,69,0.2); color: var(--green); border: 1px solid var(--green-border); }
+        .status-ko { background: rgba(220,53,69,0.15); color: var(--red); border: 1px solid var(--red-border); }
+        .status-warn { background: rgba(255,167,38,0.15); color: var(--orange); border: 1px solid var(--orange-border); }
+    </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+    <div class="header-content">
+        <div class="logo">CALL'VANTAGE <span>| Script d'Appel</span></div>
+        <div class="header-badge">COURTAGE ENERGIE B2B</div>
+    </div>
+</header>
+
+<!-- ============ NAV RAPIDE ============ -->
+<nav class="quick-nav">
+    <div class="quick-nav-inner">
+        <a href="#section-1" class="nav-btn"><span class="nav-num">1</span> Accroche</a>
+        <a href="#section-2" class="nav-btn"><span class="nav-num">2</span> Qualification</a>
+        <a href="#section-3" class="nav-btn"><span class="nav-num">3</span> Transition</a>
+        <a href="#section-4" class="nav-btn"><span class="nav-num">4</span> Prise de RDV</a>
+        <a href="#section-5" class="nav-btn"><span class="nav-num">5</span> Cloture</a>
+        <a href="objections.html" class="nav-btn" style="border-color: var(--blue); color: var(--blue-light);">Objections</a>
+    </div>
+</nav>
+
+<!-- ============ MAIN ============ -->
+<main class="main">
+
+    <!-- INTRO -->
+    <div class="intro-box">
+        <h2>Avant de decrocher le telephone</h2>
+        <p>Ce script est votre guide pas a pas pour chaque appel. Suivez les etapes dans l'ordre, utilisez les phrases vertes, evitez les phrases rouges. Le but : obtenir un rendez-vous qualifie pour notre courtier partenaire.</p>
+        <ul class="checklist">
+            <li>Fiche prospect ouverte (nom, secteur, telephone)</li>
+            <li>Agenda du courtier sous les yeux</li>
+            <li>Guide objections accessible (onglet ou imprime)</li>
+            <li>Stylo et fiche de qualification prete</li>
+            <li>Sourire au telephone (ca s'entend !)</li>
+            <li>Posture droite, voix posee et dynamique</li>
+        </ul>
+    </div>
+
+    <!-- ==========================================
+         SECTION 1 - ACCROCHE
+         ========================================== -->
+    <div class="section" id="section-1">
+        <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-number">1</div>
+            <div class="section-title-group">
+                <div class="section-title">ACCROCHE</div>
+                <div class="section-subtitle">Phrase d'ouverture &mdash; Les 15 premieres secondes sont decisives</div>
+            </div>
+            <div class="section-arrow">&#9660;</div>
+        </div>
+        <div class="section-body">
+
+            <div class="tip-box">
+                <div class="tip-label">Conseil cle</div>
+                <p>Parlez lentement, articulez, souriez. Utilisez le nom du prospect des le debut. Ne demandez JAMAIS "Est-ce que je vous derange ?". Allez droit au but en moins de 20 secondes.</p>
+            </div>
+
+            <h3>Variante A &mdash; Approche directe professionnelle</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Bonjour [M./Mme Nom], je suis [Prenom] du cabinet CALL'VANTAGE. Je me permets de vous contacter car nous accompagnons les [restaurants / hotels / boulangeries / professionnels] de votre region pour optimiser leurs contrats d'energie. On constate des ecarts importants en ce moment sur les tarifs pro, et je souhaitais savoir si vous aviez quelques instants pour en discuter ?"</p>
+            </div>
+
+            <h3>Variante B &mdash; Approche par le secteur</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Bonjour [M./Mme Nom], [Prenom] de CALL'VANTAGE. J'appelle specialement les [boulangeries / restaurants / commerces] du secteur parce qu'avec la volatilite des prix de l'energie, beaucoup de professionnels comme vous paient bien plus cher que necessaire. Est-ce que le sujet de vos factures d'electricite ou de gaz, c'est quelque chose qui vous concerne en ce moment ?"</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="say-dont">
+                <div class="say-label">&#10060; A ne pas dire</div>
+                <p class="script-text">"Bonjour, est-ce que je vous derange ?"</p>
+                <p class="script-text">"Bonjour, je vous appelle pour vous proposer un changement de fournisseur d'electricite."</p>
+                <p class="script-text">"Bonjour, c'est a propos de vos factures, est-ce que vous auriez cinq minutes ?"</p>
+                <p style="color: var(--white-soft); font-size: 0.85rem; margin-top: 10px; font-style: normal; text-decoration: none;">Ces formulations donnent au prospect une raison immediate de raccrocher ou declenchent un reflexe de rejet.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">Si le prospect repond positivement</div>
+                <p>Enchainer directement avec la section 2 &mdash; Qualification.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">Si le prospect objecte</div>
+                <p>Consultez le <a href="objections.html" style="color: var(--blue); text-decoration: underline;">guide des objections</a>. Les plus frequentes a ce stade : "Je n'ai pas le temps", "Je ne suis pas interesse", "On m'appelle tout le temps pour ca".</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 2 - QUALIFICATION
+         ========================================== -->
+    <div class="section" id="section-2">
+        <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-number">2</div>
+            <div class="section-title-group">
+                <div class="section-title">QUALIFICATION</div>
+                <div class="section-subtitle">Verifier les criteres &mdash; Arbre de decision</div>
+            </div>
+            <div class="section-arrow">&#9660;</div>
+        </div>
+        <div class="section-body">
+
+            <div class="tip-box">
+                <div class="tip-label">Objectif</div>
+                <p>Poser les bonnes questions dans le bon ordre. Chaque question a deux issues : on continue ou on rebondit. Notez les reponses au fur et a mesure sur votre fiche.</p>
+            </div>
+
+            <!-- Q1 : DECIDEUR -->
+            <div class="decision-tree">
+                <div class="decision-node">
+                    <div class="decision-question">Question 1 : Etes-vous le decideur ?</div>
+                    <div class="say-do" style="margin-bottom: 12px;">
+                        <div class="say-label">&#9989; A dire</div>
+                        <p class="script-text">"Juste pour etre sur de m'adresser a la bonne personne, c'est bien vous qui gerez la partie contrats et fournisseurs d'energie pour l'etablissement ?"</p>
+                    </div>
+                    <div class="decision-paths">
+                        <div class="decision-path path-yes">
+                            <div class="path-label">&#10004; OUI &mdash; Decideur confirme</div>
+                            <div class="path-action">Parfait, continuez avec la Question 2. Notez le nom et la fonction sur votre fiche.</div>
+                        </div>
+                        <div class="decision-path path-no">
+                            <div class="path-label">&#10008; NON &mdash; Pas le decideur</div>
+                            <div class="path-action">
+                                Demandez : <em>"Qui est la personne qui s'en occupe ? Est-ce que vous pourriez me donner son nom et le meilleur moment pour la joindre ?"</em><br>
+                                Notez le contact, remerciez, et programmez un rappel.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2 : FOURNISSEUR -->
+            <div class="decision-tree">
+                <div class="decision-node">
+                    <div class="decision-question">Question 2 : Quel est votre fournisseur actuel ?</div>
+                    <div class="say-do" style="margin-bottom: 12px;">
+                        <div class="say-label">&#9989; A dire</div>
+                        <p class="script-text">"Actuellement, vous etes chez quel fournisseur pour votre electricite ? Et pour le gaz, c'est le meme ?"</p>
+                    </div>
+                    <div class="decision-paths">
+                        <div class="decision-path path-yes">
+                            <div class="path-label">&#10004; Fournisseur identifie</div>
+                            <div class="path-action">Notez le fournisseur (EDF, Engie, TotalEnergies, ENI, Vattenfall, etc.). Enchainer Question 3.</div>
+                        </div>
+                        <div class="decision-path path-no">
+                            <div class="path-label">&#10008; "Je ne sais pas" / vague</div>
+                            <div class="path-action">
+                                Relancez : <em>"Pas de souci, c'est souvent le nom en haut de votre facture. Est-ce que vous avez une facture recente sous la main ?"</em><br>
+                                Si non, proposez de rappeler quand il l'aura sous les yeux.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q3 : ECHEANCE -->
+            <div class="decision-tree">
+                <div class="decision-node">
+                    <div class="decision-question">Question 3 : Quand expire votre contrat ? <span class="status-badge status-warn">CRITIQUE</span></div>
+                    <div class="say-do" style="margin-bottom: 12px;">
+                        <div class="say-label">&#9989; A dire</div>
+                        <p class="script-text">"Et savez-vous a quelle date votre contrat arrive a echeance ? C'est generalement indique sur la premiere page de votre contrat ou sur votre espace client en ligne."</p>
+                    </div>
+                    <div class="decision-paths">
+                        <div class="decision-path path-yes">
+                            <div class="path-label">&#10004; Echeance dans les 12 prochains mois</div>
+                            <div class="path-action">
+                                <strong>Prospect qualifie !</strong> Notez la date exacte. Continuez avec la Question 4.<br>
+                                Renforcez : <em>"C'est exactement le bon moment pour comparer. Plus on anticipe, meilleures sont les conditions."</em>
+                            </div>
+                        </div>
+                        <div class="decision-path path-no">
+                            <div class="path-label">&#10008; Echeance &gt; 12 mois ou inconnu</div>
+                            <div class="path-action">
+                                <strong>Si &gt; 12 mois :</strong> <em>"Je comprends. Meme si c'est un peu tot, notre courtier peut deja analyser vos consommations pour preparer la negociation au bon moment. Est-ce que ca vous interesserait d'avoir une premiere analyse gratuite ?"</em><br>
+                                <strong>Si inconnu :</strong> <em>"Ce serait justement l'un des premiers points que notre courtier pourrait verifier pour vous, gratuitement."</em><br>
+                                Tentez quand meme la prise de RDV, avec un angle "audit gratuit".
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q4 : CONSOMMATION -->
+            <div class="decision-tree">
+                <div class="decision-node">
+                    <div class="decision-question">Question 4 : Quelle est votre consommation / budget energie ?</div>
+                    <div class="say-do" style="margin-bottom: 12px;">
+                        <div class="say-label">&#9989; A dire</div>
+                        <p class="script-text">"Pour vous donner une idee du potentiel d'economies, vous avez une idee de ce que vous payez par mois en electricite et en gaz ? Meme un ordre de grandeur me suffit."</p>
+                    </div>
+                    <div class="decision-paths">
+                        <div class="decision-path path-yes">
+                            <div class="path-label">&#10004; Budget significatif (&gt; 300 euros/mois)</div>
+                            <div class="path-action">Notez le montant. Plus c'est eleve, plus le potentiel d'economies est important. Passez a la Question 5.</div>
+                        </div>
+                        <div class="decision-path path-no">
+                            <div class="path-label">&#10008; Petit budget ou ne sait pas</div>
+                            <div class="path-action">
+                                <em>"Meme sur des budgets plus modestes, on arrive souvent a trouver 10 a 15% d'economies. Ca peut representer plusieurs centaines d'euros par an."</em><br>
+                                Continuez la qualification.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q5 : SITES / COMPTEURS -->
+            <div class="decision-tree">
+                <div class="decision-node">
+                    <div class="decision-question">Question 5 : Combien de sites ou de compteurs avez-vous ?</div>
+                    <div class="say-do" style="margin-bottom: 12px;">
+                        <div class="say-label">&#9989; A dire</div>
+                        <p class="script-text">"Est-ce que vous avez un seul point de livraison ou plusieurs sites ? Par exemple, certains professionnels ont un local, un entrepot, un atelier..."</p>
+                    </div>
+                    <div class="decision-paths">
+                        <div class="decision-path path-yes">
+                            <div class="path-label">&#10004; Multi-sites</div>
+                            <div class="path-action">Excellent potentiel. Notez le nombre. <em>"Avec plusieurs sites, il y a souvent un levier de negociation encore plus fort."</em></div>
+                        </div>
+                        <div class="decision-path path-no">
+                            <div class="path-label">Site unique</div>
+                            <div class="path-action">Pas de probleme, un seul site peut deja generer des economies significatives. Continuez normalement.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="info-box">
+                <div class="info-label">Reperes de type de compteur (ne pas demander directement)</div>
+                <ul style="list-style: none; padding: 0;">
+                    <li><strong>C5</strong> &mdash; Petit commerce, boulangerie, petit restaurant (&lt; 36 kVA)</li>
+                    <li><strong>C4</strong> &mdash; PME, hotel moyen, restaurant gastronomique (36-250 kVA)</li>
+                    <li><strong>C3</strong> &mdash; Industrie legere, grand hotel, supermarche (&gt; 250 kVA)</li>
+                    <li><strong>C2 / C1</strong> &mdash; Grande industrie (rarement en prospection telephonique)</li>
+                </ul>
+                <p style="margin-top: 8px;">Le type de compteur se deduit de la consommation et du secteur. Le courtier le confirmera lors du RDV.</p>
+            </div>
+
+            <div class="say-dont">
+                <div class="say-label">&#10060; A ne pas dire</div>
+                <p class="script-text">"Quel est votre type de compteur, C5 ou C4 ?"</p>
+                <p style="color: var(--white-soft); font-size: 0.85rem; margin-top: 6px; font-style: normal; text-decoration: none;">Le prospect ne connait generalement pas cette classification technique. Laissez le courtier determiner cela.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 3 - TRANSITION
+         ========================================== -->
+    <div class="section" id="section-3">
+        <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-number">3</div>
+            <div class="section-title-group">
+                <div class="section-title">TRANSITION</div>
+                <div class="section-subtitle">Reformuler et amener la proposition de RDV</div>
+            </div>
+            <div class="section-arrow">&#9660;</div>
+        </div>
+        <div class="section-body">
+
+            <div class="tip-box">
+                <div class="tip-label">Principe</div>
+                <p>Reformulez ce que le prospect vient de vous dire pour montrer que vous avez ecoute, puis creez un pont naturel vers la proposition de RDV. Ne vendez rien : vous proposez un audit gratuit.</p>
+            </div>
+
+            <h3>Formulation standard</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"D'accord [M./Mme Nom], donc si je recapitule : vous etes actuellement chez [fournisseur], votre contrat arrive a echeance [mois/annee], et vous payez environ [montant] par mois. C'est bien ca ?"</p>
+                <p class="script-text" style="margin-top: 12px;">"Ce que je vous propose, c'est de vous mettre en relation avec notre courtier specialise. Il va analyser votre situation gratuitement, comparer les offres de tous les fournisseurs du marche, et vous presenter les meilleures options. C'est sans engagement, ca prend une vingtaine de minutes, et ca peut vous faire economiser plusieurs milliers d'euros. Est-ce que ca vous semble interessant ?"</p>
+            </div>
+
+            <h3>Variante pour les prospects hesitants</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Ecoutez, beaucoup de professionnels dans votre secteur pensaient aussi que ca ne valait pas le coup de regarder, et finalement ils ont decouvert qu'ils payaient entre 10 et 25% de trop. Notre courtier s'occupe de tout, c'est gratuit pour vous, et en 20 minutes c'est fait. Qu'est-ce que vous risquez ?"</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="say-dont">
+                <div class="say-label">&#10060; A ne pas dire</div>
+                <p class="script-text">"On peut vous faire economiser 50% sur vos factures !"</p>
+                <p class="script-text">"On est les meilleurs du marche."</p>
+                <p class="script-text">"Il faut absolument que vous changiez de fournisseur."</p>
+                <p style="color: var(--white-soft); font-size: 0.85rem; margin-top: 6px; font-style: normal; text-decoration: none;">Evitez les promesses exagerees, la pression et les superlatifs. Restez credible et factuel.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 4 - PRISE DE RDV
+         ========================================== -->
+    <div class="section" id="section-4">
+        <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-number">4</div>
+            <div class="section-title-group">
+                <div class="section-title">PRISE DE RDV</div>
+                <div class="section-subtitle">Proposer 2 creneaux, confirmer le decideur</div>
+            </div>
+            <div class="section-arrow">&#9660;</div>
+        </div>
+        <div class="section-body">
+
+            <div class="tip-box">
+                <div class="tip-label">Technique de l'alternative</div>
+                <p>Proposez toujours DEUX creneaux. Ne demandez jamais "Quand est-ce que vous seriez disponible ?" car cela donne au prospect la possibilite de reporter indefiniment. Proposez des dates precises.</p>
+            </div>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire &mdash; Proposition de creneaux</div>
+                <p class="script-text">"Tres bien ! Notre courtier pourrait vous rappeler pour cet audit gratuit. Qu'est-ce qui vous arrangerait le mieux : plutot en debut de semaine, mardi en fin de matinee, ou jeudi en debut d'apres-midi ?"</p>
+            </div>
+
+            <div class="say-do" style="margin-top: 10px;">
+                <div class="say-label">&#9989; A dire &mdash; Confirmation du creneau</div>
+                <p class="script-text">"Parfait, je note donc [jour] a [heure]. C'est bien le [numero de telephone] ou notre courtier peut vous joindre ? Et c'est M./Mme [Nom], c'est bien ca ?"</p>
+            </div>
+
+            <div class="say-do" style="margin-top: 10px;">
+                <div class="say-label">&#9989; A dire &mdash; RDV telephonique ou visio</div>
+                <p class="script-text">"L'echange se fait par telephone, c'est le plus simple. Si le courtier a besoin de documents, il vous enverra un email avant le rendez-vous. Ca dure environ 20 minutes."</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Verifications obligatoires avant de valider le RDV</h3>
+
+            <table class="recap-table">
+                <tr>
+                    <th>Information</th>
+                    <th>Verifie ?</th>
+                </tr>
+                <tr>
+                    <td class="recap-field">Nom complet du decideur</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Fonction / poste</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Numero de telephone direct</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Adresse email (si possible)</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Date et heure du RDV</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Fournisseur actuel</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Date d'echeance du contrat</td>
+                    <td>____________________</td>
+                </tr>
+                <tr>
+                    <td class="recap-field">Budget energie mensuel estime</td>
+                    <td>____________________</td>
+                </tr>
+            </table>
+
+            <div class="say-dont">
+                <div class="say-label">&#10060; A ne pas dire</div>
+                <p class="script-text">"Quand est-ce que vous etes libre ?"</p>
+                <p class="script-text">"Je vous rappelle quand ca vous arrange."</p>
+                <p style="color: var(--white-soft); font-size: 0.85rem; margin-top: 6px; font-style: normal; text-decoration: none;">Ces formulations trop ouvertes n'aboutissent quasiment jamais a un RDV concret.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 5 - CLOTURE
+         ========================================== -->
+    <div class="section" id="section-5">
+        <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-number">5</div>
+            <div class="section-title-group">
+                <div class="section-title">CLOTURE</div>
+                <div class="section-subtitle">Recapitulatif, confirmation SMS, prochaines etapes</div>
+            </div>
+            <div class="section-arrow">&#9660;</div>
+        </div>
+        <div class="section-body">
+
+            <h3>Recapitulatif oral</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Parfait [M./Mme Nom], je recapitule pour etre sur que tout est bien note. Notre courtier, [Prenom du courtier], va vous appeler le [jour] a [heure] au [numero]. Il va analyser vos contrats d'energie actuels et vous presenter les meilleures options du marche. C'est gratuit et sans engagement de votre part."</p>
+            </div>
+
+            <h3>Confirmation par SMS</h3>
+
+            <div class="say-do" style="margin-top: 10px;">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Je vous envoie un petit SMS de confirmation avec les coordonnees de notre courtier et le creneau du rendez-vous. Comme ca vous avez tout sous la main."</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">Modele de SMS de confirmation</div>
+                <p><em>"Bonjour [M./Mme Nom], suite a notre echange, votre RDV avec [Prenom], courtier en energie CALL'VANTAGE, est confirme le [date] a [heure]. Gratuit et sans engagement. A bientot !"</em></p>
+            </div>
+
+            <h3>Prochaines etapes</h3>
+
+            <div class="say-do" style="margin-top: 10px;">
+                <div class="say-label">&#9989; A dire</div>
+                <p class="script-text">"Si possible, je vous invite a preparer une facture recente d'electricite et/ou de gaz pour le rendez-vous. Ca permettra au courtier de vous donner des chiffres precis tout de suite. Merci pour votre temps, [M./Mme Nom], et bonne journee !"</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>En cas de non-qualification ou refus poli</h3>
+
+            <div class="say-do">
+                <div class="say-label">&#9989; A dire &mdash; Cloture elegante</div>
+                <p class="script-text">"Je comprends tout a fait, [M./Mme Nom]. En tout cas, n'hesitez pas a nous contacter si la situation evolue. Nous sommes la pour aider les professionnels a maitriser leurs couts d'energie. Je vous souhaite une excellente journee !"</p>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-label">Rappel important</div>
+                <p>Meme un appel qui n'aboutit pas a un RDV peut generer une opportunite future. Soyez toujours courtois et professionnel. Le prospect peut changer d'avis dans quelques mois et se souvenir de vous positivement.</p>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <p><strong>CALL'VANTAGE</strong> &mdash; Script d'Appel B2B Courtage Energie</p>
+    <p>Document interne &mdash; Confidentiel &mdash; Ne pas diffuser</p>
+</footer>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+    // --- Accordeon ---
+    function toggleSection(header) {
+        const body = header.nextElementSibling;
+        const isOpen = header.classList.contains('open');
+
+        // Fermer toutes les sections
+        document.querySelectorAll('.section-header').forEach(h => {
+            h.classList.remove('open');
+            h.nextElementSibling.classList.remove('open');
+        });
+
+        // Ouvrir celle cliquee (si elle etait fermee)
+        if (!isOpen) {
+            header.classList.add('open');
+            body.classList.add('open');
+            // Scroll doux vers la section
+            setTimeout(() => {
+                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    // --- Navigation active ---
+    document.querySelectorAll('.nav-btn[href^="#"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const header = targetSection.querySelector('.section-header');
+                if (header && !header.classList.contains('open')) {
+                    toggleSection(header);
+                }
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 150);
+            }
+        });
+    });
+
+    // --- Ouvrir la premiere section par defaut ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstHeader = document.querySelector('.section-header');
+        if (firstHeader) {
+            toggleSection(firstHeader);
+        }
+    });
+</script>
+
+</body>
+</html>
