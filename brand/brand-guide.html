@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALL'VANTAGE — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:          #0A1628;
+    --navy-light:    #162340;
+    --navy-mid:      #1E3A5F;
+    --electric:      #00A8E8;
+    --electric-light:#4DC9F6;
+    --electric-dark: #0077B6;
+    --gold:          #C9A84C;
+    --gold-light:    #E8D48B;
+    --gold-dark:     #A67C30;
+    --white:         #F8F9FA;
+    --grey-light:    #CED4DA;
+    --success:       #2ECC71;
+    --warning:       #F39C12;
+    --danger:        #E74C3C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+
+  /* === COVER === */
+  .cover {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(0,168,232,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 50%);
+  }
+  .cover-corner {
+    position: absolute;
+    width: 120px; height: 120px;
+    border-color: rgba(201,168,76,0.2);
+    border-style: solid;
+  }
+  .cover-corner.tl { top: 40px; left: 40px; border-width: 1px 0 0 1px; }
+  .cover-corner.tr { top: 40px; right: 40px; border-width: 1px 1px 0 0; }
+  .cover-corner.bl { bottom: 40px; left: 40px; border-width: 0 0 1px 1px; }
+  .cover-corner.br { bottom: 40px; right: 40px; border-width: 0 1px 1px 0; }
+
+  .cover-logo { position: relative; margin-bottom: 48px; }
+  .cover-logo img { height: 72px; width: auto; filter: drop-shadow(0 4px 24px rgba(201,168,76,0.3)); }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .cover-sub {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .cover-divider {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+    position: relative;
+  }
+  .cover-meta {
+    position: relative;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* === SECTIONS === */
+  .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+  .section-header { margin-bottom: 48px; }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .section-desc {
+    font-size: 15px;
+    color: #6c757d;
+    max-width: 600px;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+
+  .bg-dark { background: var(--navy); }
+  .bg-dark .section-title { color: var(--white); }
+  .bg-dark .section-desc { color: var(--grey-light); }
+
+  /* === LOGO SECTION === */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .logo-card {
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-card.on-light { background: var(--white); border: 1px solid #e9ecef; }
+  .logo-card.on-dark  { background: var(--navy); }
+  .logo-card.on-mid   { background: var(--navy-mid); }
+  .logo-card img { max-width: 280px; width: 100%; height: auto; }
+  .logo-card-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b949e;
+    text-align: center;
+  }
+
+  .logo-anatomy {
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .logo-anatomy svg { flex-shrink: 0; }
+  .anatomy-notes { flex: 1; min-width: 240px; }
+  .anatomy-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .anatomy-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .anatomy-text h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .anatomy-text p  { font-size: 12px; color: #6c757d; margin-top: 2px; line-height: 1.5; }
+
+  .clearzone {
+    background: #f8f9fa;
+    border: 1px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .clearzone img { margin: 20px; max-width: 240px; }
+  .clearzone-label { font-size: 11px; color: #8b949e; letter-spacing: 1px; text-transform: uppercase; }
+
+  .dont-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .dont-item {
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+  }
+  .dont-item::after {
+    content: '✕';
+    position: absolute;
+    top: 12px; right: 12px;
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .dont-item p { font-size: 12px; color: #6c757d; }
+
+  /* === COLORS === */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .color-swatch {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .color-block {
+    height: 100px;
+  }
+  .color-info {
+    background: var(--white);
+    padding: 12px;
+  }
+  .color-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+  .color-hex  { font-family: 'DM Mono', monospace; font-size: 11px; color: #8b949e; }
+  .color-usage { font-size: 10px; color: #adb5bd; margin-top: 2px; }
+
+  .color-roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .color-role {
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .role-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .role-info h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .role-info p  { font-size: 12px; color: #6c757d; margin-top: 2px; }
+
+  /* === TYPOGRAPHY === */
+  .type-grid { display: flex; flex-direction: column; gap: 32px; }
+  .type-card {
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .type-header {
+    background: var(--navy);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .type-header h3 { font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+  .type-header span { font-size: 11px; color: #8b949e; }
+  .type-body { padding: 32px 24px; }
+  .type-specimen { line-height: 1.2; }
+  .type-meta { margin-top: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+  .type-meta-item { }
+  .type-meta-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #adb5bd; }
+  .type-meta-value { font-size: 13px; font-weight: 600; color: var(--navy); margin-top: 2px; font-family: 'DM Mono', monospace; }
+
+  .scale-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+  .scale-table th { background: var(--navy); color: var(--gold); padding: 10px 16px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; }
+  .scale-table td { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .scale-table tr:last-child td { border-bottom: none; }
+  .scale-table .mono { font-family: 'DM Mono', monospace; font-size: 11px; color: #6c757d; }
+
+  /* === PSYCHOLOGY === */
+  .psych-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .psych-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .psych-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .psych-card p { font-size: 13px; color: var(--grey-light); line-height: 1.6; }
+
+  /* === TONE OF VOICE === */
+  .tov-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .tov-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 24px;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .tov-card .tov-do   { font-size: 11px; font-weight: 700; color: var(--success); text-transform: uppercase; letter-spacing: 1px; }
+  .tov-card .tov-dont { font-size: 11px; font-weight: 700; color: var(--danger);  text-transform: uppercase; letter-spacing: 1px; }
+  .tov-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 6px 0 8px; }
+  .tov-card p  { font-size: 12px; color: #6c757d; line-height: 1.5; }
+
+  .example-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .ex-good, .ex-bad {
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .ex-good { background: rgba(46,204,113,0.08); border-left: 3px solid var(--success); color: var(--navy); }
+  .ex-bad  { background: rgba(231,76,60,0.08);  border-left: 3px solid var(--danger);  color: var(--navy); }
+  .ex-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .ex-good .ex-label { color: var(--success); }
+  .ex-bad  .ex-label { color: var(--danger); }
+
+  /* === FOOTER === */
+  .guide-footer {
+    background: var(--navy);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .guide-footer p { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+  .guide-footer strong { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .section { padding: 48px 20px; }
+    .cover { padding: 40px 20px; }
+    .logo-anatomy { flex-direction: column; }
+    .example-pair { grid-template-columns: 1fr; }
+    .color-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media print {
+    body { background: white; }
+    .cover { min-height: 60vh; }
+    .section { padding: 40px; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-corner tl"></div>
+  <div class="cover-corner tr"></div>
+  <div class="cover-corner bl"></div>
+  <div class="cover-corner br"></div>
+
+  <div class="cover-logo">
+    <img src="assets/conceptF-logo-primary.svg" alt="CALL'VANTAGE" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div style="display:none; font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#F8F9FA; letter-spacing:0.05em;">CALL<span style="color:#C9A84C;">'</span>VANTAGE</div>
+  </div>
+
+  <div class="cover-title">Brand Guide</div>
+  <div class="cover-sub">Identit&eacute; visuelle &amp; directives de marque</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">Version 1.0 &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; Confidentiel</div>
+</div>
+
+<!-- ===== LOGO ===== -->
+<div style="background:#fff;">
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">01 &mdash; Identit&eacute; visuelle</div>
+    <h2 class="section-title">Le logo</h2>
+    <p class="section-desc">Le logo CALL&rsquo;VANTAGE est constitu&eacute; d'un sceau monogramme CV et d'un logotype. Le sceau &eacute;voque l'autorit&eacute;, la garantie et le prestige. Le logotype joue sur le contraste gras/fin pour exprimer la double nature de la marque : rigueur et fluidit&eacute;.</p>
+  </div>
+
+  <!-- Anatomie -->
+  <div class="logo-anatomy">
+    <svg viewBox="0 0 200 80" width="320" height="128" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgGold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#A67C30"/>
+          <stop offset="50%" stop-color="#E8D48B"/>
+          <stop offset="100%" stop-color="#A67C30"/>
+        </linearGradient>
+      </defs>
+      <circle cx="28" cy="40" r="24" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+      <circle cx="28" cy="40" r="21.5" fill="none" stroke="#C9A84C" stroke-width="0.2" opacity="0.4"/>
+      <text x="14" y="53" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#0A1628">C</text>
+      <text x="30" y="53" font-family="Georgia,serif" font-size="24" font-weight="400" fill="url(#bgGold)">V</text>
+      <line x1="62" y1="16" x2="62" y2="64" stroke="#C9A84C" stroke-width="0.3" opacity="0.25"/>
+      <text x="72" y="50" font-family="Arial,sans-serif" font-size="21" font-weight="800" letter-spacing="3" fill="#0A1628">CALL</text>
+      <text x="163" y="30" font-family="Georgia,serif" font-size="16" fill="#C9A84C">&rsquo;</text>
+      <text x="172" y="50" font-family="Arial,sans-serif" font-size="21" font-weight="300" letter-spacing="3" fill="#0A1628">VANTAGE</text>
+      <!-- Annotations -->
+      <circle cx="28" cy="40" r="2" fill="#00A8E8"/>
+      <circle cx="120" cy="50" r="2" fill="#00A8E8"/>
+      <circle cx="163" cy="24" r="2" fill="#C9A84C"/>
+    </svg>
+    <div class="anatomy-notes">
+      <div class="anatomy-note">
+        <div class="anatomy-num">1</div>
+        <div class="anatomy-text">
+          <h4>Sceau monogramme CV</h4>
+          <p>Double cercle concentrique en or. C serif gras (autorit&eacute;) + V serif l&eacute;ger d&eacute;grad&eacute; or. Psychologie : sceau de certification &rarr; confiance imm&eacute;diate.</p>
+        </div>
+      </div>
+      <div class="anatomy-note">
+        <div class="anatomy-num">2</div>
+        <div class="anatomy-text">
+          <h4>S&eacute;parateur vertical</h4>
+          <p>Ligne fine dorée (opacit&eacute; 25%) cr&eacute;ant une pause visuelle. &Eacute;vite la confusion entre le sceau et le mot.</p>
+        </div>
+      </div>
+      <div class="anatomy-note">
+        <div class="anatomy-num">3</div>
+        <div class="anatomy-text">
+          <h4>Logotype bipolaire</h4>
+          <p>CALL en gras sans-serif (800) + VANTAGE en l&eacute;ger (300). L'apostrophe dorée en serif casse le rythme &mdash; effet Von Restorff.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usages sur fond -->
+  <h3 style="font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#6c757d; margin-bottom:20px;">Utilisations autoris&eacute;es</h3>
+  <div class="logo-grid">
+    <div class="logo-card on-light">
+      <img src="assets/conceptF-logo-primary.svg" alt="Logo sur fond clair">
+      <div class="logo-card-label">Sur fond blanc / clair</div>
+    </div>
+    <div class="logo-card on-dark">
+      <img src="assets/conceptF-logo-white.svg" alt="Logo sur fond sombre" onerror="this.src='assets/conceptF-logo-primary.svg'">
+      <div class="logo-card-label" style="color:#8b949e;">Sur fond navy / sombre</div>
+    </div>
+    <div class="logo-card on-light" style="justify-content:center; flex-direction:row; gap:32px; align-items:center;">
+      <img src="assets/conceptF-logo-icon.svg" alt="Icone" style="height:64px; width:64px;">
+      <div>
+        <div class="logo-card-label">Ic&ocirc;ne seule</div>
+        <div style="font-size:11px; color:#adb5bd; margin-top:4px;">Favicon, profil r&eacute;seaux</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zone de protection -->
+  <h3 style="font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#6c757d; margin:40px 0 20px;">Zone de protection (Clear Space)</h3>
+  <div class="clearzone">
+    <div class="clearzone-label">x = hauteur du sceau</div>
+    <img src="assets/conceptF-logo-primary.svg" alt="Clear zone" style="border: 24px solid transparent; outline: 1px dashed #dee2e6; box-shadow: inset 0 0 0 1px #dee2e6;">
+    <div class="clearzone-label" style="margin-top:8px;">Espace minimal &eacute;gal &agrave; <strong>x</strong> de chaque c&ocirc;t&eacute;</div>
+  </div>
+
+  <!-- Interdictions -->
+  <h3 style="font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#6c757d; margin:40px 0 20px;">&Agrave; ne jamais faire</h3>
+  <div class="dont-grid">
+    <div class="dont-item"><p>Changer les couleurs du logo</p></div>
+    <div class="dont-item"><p>D&eacute;former ou &eacute;tirer le logo</p></div>
+    <div class="dont-item"><p>Ajouter des effets (ombre, glow)</p></div>
+    <div class="dont-item"><p>Placer sur fond trop clair ou trop charg&eacute;</p></div>
+    <div class="dont-item"><p>Utiliser uniquement le texte sans le sceau</p></div>
+    <div class="dont-item"><p>Utiliser en dessous de 24px de hauteur</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ===== COULEURS ===== -->
+<div style="background:#f4f5f7;">
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">02 &mdash; Palette chromatique</div>
+    <h2 class="section-title">Les couleurs</h2>
+    <p class="section-desc">La palette est construite autour du triptyque Navy / Gold / &Eacute;lectrique. Le Navy est l'autorit&eacute;, le Gold est la valeur, l'&Eacute;lectrique est l'&eacute;nergie. Chaque teinte a un r&ocirc;le pr&eacute;cis.</p>
+  </div>
+
+  <div class="color-grid">
+    <div class="color-swatch">
+      <div class="color-block" style="background:#0A1628;"></div>
+      <div class="color-info"><div class="color-name">Navy</div><div class="color-hex">#0A1628</div><div class="color-usage">Fond principal, texte h&eacute;ro</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#162340;"></div>
+      <div class="color-info"><div class="color-name">Navy Light</div><div class="color-hex">#162340</div><div class="color-usage">Cartes, sections alt.</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#1E3A5F;"></div>
+      <div class="color-info"><div class="color-name">Navy Mid</div><div class="color-hex">#1E3A5F</div><div class="color-usage">Hover, composants</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:linear-gradient(135deg,#A67C30,#E8D48B,#A67C30);"></div>
+      <div class="color-info"><div class="color-name">Gold</div><div class="color-hex">#C9A84C</div><div class="color-usage">Accents, CTA, logo</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#E8D48B;"></div>
+      <div class="color-info"><div class="color-name">Gold Light</div><div class="color-hex">#E8D48B</div><div class="color-usage">Survol CTA, d&eacute;grad&eacute;s</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#00A8E8;"></div>
+      <div class="color-info"><div class="color-name">&Eacute;lectrique</div><div class="color-hex">#00A8E8</div><div class="color-usage">Icones, badges, &eacute;nergie</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#4DC9F6;"></div>
+      <div class="color-info"><div class="color-name">&Eacute;lectrique Light</div><div class="color-hex">#4DC9F6</div><div class="color-usage">Survols, variations</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#F8F9FA;border:1px solid #e9ecef;"></div>
+      <div class="color-info"><div class="color-name">White</div><div class="color-hex">#F8F9FA</div><div class="color-usage">Texte sur fond sombre</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#2ECC71;"></div>
+      <div class="color-info"><div class="color-name">Succ&egrave;s</div><div class="color-hex">#2ECC71</div><div class="color-usage">Validation, qualifi&eacute;</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#E74C3C;"></div>
+      <div class="color-info"><div class="color-name">Danger</div><div class="color-hex">#E74C3C</div><div class="color-usage">Probl&egrave;me, refus</div></div>
+    </div>
+  </div>
+
+  <div class="color-roles">
+    <div class="color-role"><div class="role-dot" style="background:#0A1628;"></div><div class="role-info"><h4>Fond principal</h4><p>Navy #0A1628 &mdash; toutes les sections h&eacute;ro&iuml;ques et en-t&ecirc;tes. Jamais remplac&eacute; par du noir pur.</p></div></div>
+    <div class="color-role"><div class="role-dot" style="background:#C9A84C;"></div><div class="role-info"><h4>Accent premium</h4><p>Gold #C9A84C &mdash; tous les &eacute;l&eacute;ments d'appel &agrave; l'action, borders, s&eacute;parateurs, ic&ocirc;nes prioritaires.</p></div></div>
+    <div class="color-role"><div class="role-dot" style="background:#00A8E8;"></div><div class="role-info"><h4>Signal &eacute;nergie</h4><p>&Eacute;lectrique #00A8E8 &mdash; utilis&eacute; avec parcimonie pour &eacute;voquer le secteur &eacute;nergie. Jamais dominant.</p></div></div>
+    <div class="color-role"><div class="role-dot" style="background:#F8F9FA;border:1px solid #dee2e6;"></div><div class="role-info"><h4>Typographie claire</h4><p>White #F8F9FA &mdash; texte principal sur fonds sombres. Ne pas utiliser #FFFFFF pur (trop agressif).</p></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ===== TYPOGRAPHIE ===== -->
+<div style="background:#fff;">
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">03 &mdash; Typographie</div>
+    <h2 class="section-title">Les polices</h2>
+    <p class="section-desc">Le syst&egrave;me typographique repose sur trois familles compl&eacute;mentaires, chacune avec un r&ocirc;le d&eacute;fini. L'association serif/sans-serif cr&eacute;e la tension visuelle caract&eacute;ristique de la marque.</p>
+  </div>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-header">
+        <h3>Playfair Display</h3>
+        <span>Titres &amp; h&eacute;ros</span>
+      </div>
+      <div class="type-body">
+        <div class="type-specimen" style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:700; color:#0A1628; line-height:1.1;">
+          Des rendez-vous<br><em style="color:#C9A84C;">qualifi&eacute;s.</em>
+        </div>
+        <div class="type-meta">
+          <div class="type-meta-item"><div class="type-meta-label">Usage</div><div class="type-meta-value">H1 · H2 · Citations</div></div>
+          <div class="type-meta-item"><div class="type-meta-label">Weights</div><div class="type-meta-value">400 · 600 · 700</div></div>
+          <div class="type-meta-item"><div class="type-meta-label">Import</div><div class="type-meta-value">Google Fonts</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-header">
+        <h3>Inter</h3>
+        <span>Corps de texte &amp; UI</span>
+      </div>
+      <div class="type-body">
+        <div class="type-specimen" style="font-family:'Inter',sans-serif; color:#0A1628;">
+          <div style="font-size:28px; font-weight:800; letter-spacing:0.04em; margin-bottom:8px;">CALL'VANTAGE</div>
+          <div style="font-size:16px; font-weight:400; color:#6c757d; line-height:1.6;">Nous v&eacute;rifions l'&eacute;ch&eacute;ance de votre contrat &eacute;nerg&eacute;tique avant chaque rendez-vous. Si le RDV n'est pas qualifi&eacute;, il n'est pas factur&eacute;.</div>
+        </div>
+        <div class="type-meta">
+          <div class="type-meta-item"><div class="type-meta-label">Usage</div><div class="type-meta-value">Corps · Labels · UI</div></div>
+          <div class="type-meta-item"><div class="type-meta-label">Weights</div><div class="type-meta-value">300 · 400 · 500 · 600 · 800</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-header">
+        <h3>DM Mono</h3>
+        <span>Chiffres &amp; donn&eacute;es</span>
+      </div>
+      <div class="type-body">
+        <div class="type-specimen" style="font-family:'DM Mono',monospace; color:#0A1628; display:flex; gap:48px; align-items:flex-end;">
+          <div>
+            <div style="font-size:56px; font-weight:500; color:#C9A84C; line-height:1;">85%</div>
+            <div style="font-size:10px; font-weight:400; letter-spacing:2px; color:#8b949e; text-transform:uppercase; margin-top:4px;">Taux qualif.</div>
+          </div>
+          <div>
+            <div style="font-size:56px; font-weight:500; line-height:1;">48h</div>
+            <div style="font-size:10px; font-weight:400; letter-spacing:2px; color:#8b949e; text-transform:uppercase; margin-top:4px;">Premiers RDV</div>
+          </div>
+          <div>
+            <div style="font-size:56px; font-weight:500; color:#C9A84C; line-height:1;">0€</div>
+            <div style="font-size:10px; font-weight:400; letter-spacing:2px; color:#8b949e; text-transform:uppercase; margin-top:4px;">Si non qualif.</div>
+          </div>
+        </div>
+        <div class="type-meta">
+          <div class="type-meta-item"><div class="type-meta-label">Usage</div><div class="type-meta-value">Stats · Prix · KPIs</div></div>
+          <div class="type-meta-item"><div class="type-meta-label">Weights</div><div class="type-meta-value">400 · 500</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type Scale -->
+  <h3 style="font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#6c757d; margin:48px 0 20px;">Echelle typographique</h3>
+  <table class="scale-table">
+    <thead><tr><th>Niveau</th><th>Taille</th><th>Poids</th><th>Police</th><th>Utilisation</th></tr></thead>
+    <tbody>
+      <tr><td>Display</td><td class="mono">clamp(2.5rem, 5vw, 4rem)</td><td class="mono">700</td><td>Playfair Display</td><td>H&eacute;ros page, accroches</td></tr>
+      <tr><td>H1</td><td class="mono">clamp(2rem, 3.5vw, 3rem)</td><td class="mono">700</td><td>Playfair Display</td><td>Titre de section principal</td></tr>
+      <tr><td>H2</td><td class="mono">clamp(1.5rem, 2.5vw, 2rem)</td><td class="mono">600</td><td>Playfair Display</td><td>Sous-titres de sections</td></tr>
+      <tr><td>H3</td><td class="mono">1.25rem</td><td class="mono">700</td><td>Inter</td><td>Titres de cartes</td></tr>
+      <tr><td>Body Large</td><td class="mono">1.125rem</td><td class="mono">400</td><td>Inter</td><td>Intro, descriptions</td></tr>
+      <tr><td>Body</td><td class="mono">1rem</td><td class="mono">400</td><td>Inter</td><td>Texte courant</td></tr>
+      <tr><td>Small</td><td class="mono">0.875rem</td><td class="mono">400 / 500</td><td>Inter</td><td>Labels, captions</td></tr>
+      <tr><td>Label</td><td class="mono">0.625rem</td><td class="mono">700</td><td>Inter</td><td>Surtitre, cat&eacute;gorie (ALL CAPS)</td></tr>
+      <tr><td>Data</td><td class="mono">variable</td><td class="mono">400 / 500</td><td>DM Mono</td><td>Chiffres, prix, KPIs</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ===== PSYCHOLOGIE ===== -->
+<div class="bg-dark">
+<div class="section">
+  <div class="section-header">
+    <div class="section-label" style="color:rgba(201,168,76,0.6);">04 &mdash; Design psychologique</div>
+    <h2 class="section-title">Principes psychologiques</h2>
+    <p class="section-desc">Chaque d&eacute;cision design est justifi&eacute;e par un principe de psychologie cognitive ou comportementale.</p>
+  </div>
+  <div class="psych-grid">
+    <div class="psych-card">
+      <h4>Effet Von Restorff</h4>
+      <p>L'apostrophe en gold s&eacute;rifie brise la s&eacute;quence typographique uniforme. L'œil s'y accroche, cr&eacute;ant un ancrage m&eacute;moriel fort sur le nom de la marque.</p>
+    </div>
+    <div class="psych-card">
+      <h4>Heritage Bias</h4>
+      <p>Le sceau monogramme CV active un biais de prestige associ&eacute; aux marques centenaires (notaires, cabinets, grandes &eacute;coles). Transf&egrave;re une cr&eacute;dibilit&eacute; implicite.</p>
+    </div>
+    <div class="psych-card">
+      <h4>Trust Heuristic</h4>
+      <p>Le Navy profond (#0A1628) est statistiquement la couleur la plus associ&eacute;e &agrave; la fiabilit&eacute; en contexte B2B. R&eacute;duit le risque per&ccedil;u d&egrave;s le premier contact visuel.</p>
+    </div>
+    <div class="psych-card">
+      <h4>Price Anchoring</h4>
+      <p>La couleur or d&eacute;clenche un ancrage cognitif "premium" qui justifie les tarifs avant m&ecirc;me la lecture. R&eacute;duit la n&eacute;gociation price-led chez les prospects.</p>
+    </div>
+    <div class="psych-card">
+      <h4>Gestalt — Proximit&eacute;</h4>
+      <p>Le s&eacute;parateur fin entre le sceau et le logotype cr&eacute;e une unit&eacute; visuelle tout en maintenant la distinction des &eacute;l&eacute;ments. Le cerveau per&ccedil;oit un ensemble coh&eacute;rent.</p>
+    </div>
+    <div class="psych-card">
+      <h4>Processing Fluency</h4>
+      <p>Les formes simples (cercle, lignes droites, s&eacute;paration claire) r&eacute;duisent la charge cognitive. Un logo facile &agrave; traiter est per&ccedil;u comme plus digne de confiance.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== TONE OF VOICE ===== -->
+<div style="background:#f4f5f7;">
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">05 &mdash; Communication</div>
+    <h2 class="section-title">Ton de voix</h2>
+    <p class="section-desc">CALL&rsquo;VANTAGE parle comme un partenaire commercial expert &mdash; direct, factuel, sans jargon inutile. Ni agence de pub, ni PME timide.</p>
+  </div>
+
+  <div class="tov-grid">
+    <div class="tov-card">
+      <div class="tov-do">&#x2713; Faire</div>
+      <h4>Direct &amp; factuel</h4>
+      <p>Chiffres concrets, promesses sp&eacute;cifiques. "85% de taux de qualification" &gt; "un excellent taux".</p>
+    </div>
+    <div class="tov-card">
+      <div class="tov-do">&#x2713; Faire</div>
+      <h4>Confiant sans arrogance</h4>
+      <p>Affirmer sa valeur sans d&eacute;nigrer la concurrence. La garantie parle d'elle-m&ecirc;me.</p>
+    </div>
+    <div class="tov-card">
+      <div class="tov-do">&#x2713; Faire</div>
+      <h4>Centré résultat</h4>
+      <p>Toujours partir du b&eacute;n&eacute;fice client, pas des caract&eacute;ristiques du service.</p>
+    </div>
+    <div class="tov-card">
+      <div class="tov-dont">&#x2715; &Eacute;viter</div>
+      <h4>Le jargon Call Center</h4>
+      <p>Pas de "agents", "campagne", "dialer". Parler commercial et r&eacute;sultat business.</p>
+    </div>
+    <div class="tov-card">
+      <div class="tov-dont">&#x2715; &Eacute;viter</div>
+      <h4>La sur-promesse</h4>
+      <p>Aucun "garanti 100%" ou "meilleur du march&eacute;" sans preuve. Notre garantie est pr&eacute;cise et l&eacute;galement encadr&eacute;e.</p>
+    </div>
+    <div class="tov-card">
+      <div class="tov-dont">&#x2715; &Eacute;viter</div>
+      <h4>Le ton publicitaire</h4>
+      <p>Pas d'exclamations, pas de majuscules abusives. Sobri&eacute;t&eacute; = premium.</p>
+    </div>
+  </div>
+
+  <div class="example-pair">
+    <div class="ex-good">
+      <div class="ex-label">&#x2713; Correct</div>
+      "Nous v&eacute;rifions la date d'&eacute;ch&eacute;ance de votre prospect avant chaque rendez-vous. Si le RDV n'est pas qualifi&eacute;, vous ne payez rien."
+    </div>
+    <div class="ex-bad">
+      <div class="ex-label">&#x2715; &Agrave; &eacute;viter</div>
+      "Notre &eacute;quipe de super-agents fait des appels super qualifi&eacute;s pour vous, et si &ccedil;a marche pas c'est GRATUIT !!! &#x1F525;"
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="guide-footer">
+  <p><strong>CALL&rsquo;VANTAGE</strong> &mdash; Brand Guide v1.0 &mdash; 2026</p>
+  <p style="margin-top:8px;">Gueliz, Av Yacoub el Mansour, Immeuble Amitaf B, Bureau 6, Marrakech &mdash; +212 664 860 353</p>
+  <p style="margin-top:8px;">Document confidentiel &mdash; Usage interne et partenaires autoris&eacute;s uniquement</p>
+</div>
+
+</body>
+</html>

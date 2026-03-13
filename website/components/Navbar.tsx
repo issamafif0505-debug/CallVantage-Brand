@@ -51,21 +51,12 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span
-            style={{
-              fontFamily: "var(--font-playfair-display), Georgia, serif",
-              fontSize: "1.375rem",
-              fontWeight: 700,
-              letterSpacing: "0.04em",
-              color: "#F8F9FA",
-              userSelect: "none",
-            }}
-          >
-            CALL
-            <span style={{ color: "#C9A84C" }}>&apos;</span>
-            VANTAGE
-          </span>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <img
+            src="/logo-primary.svg"
+            alt="CALL'VANTAGE"
+            style={{ height: "36px", width: "auto", display: "block" }}
+          />
         </Link>
 
         {/* Desktop Nav */}
