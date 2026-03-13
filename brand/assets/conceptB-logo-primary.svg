@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <defs>
+    <!-- Gold gradient for the verified apostrophe mark -->
+    <linearGradient id="pGold" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#E8D48B"/>
+      <stop offset="50%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A8842C"/>
+    </linearGradient>
+    <!-- Refined shadow for the apostrophe mark -->
+    <filter id="pShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.8"/>
+      <feOffset dx="0" dy="0.5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- "CALL" — Navy, elegant weight, generous tracking -->
+  <text x="20" y="78"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="600"
+        font-size="56"
+        letter-spacing="6"
+        fill="#0A1628"
+        >CALL</text>
+
+  <!-- The Apostrophe-Checkmark: the verified mark -->
+  <!-- A single calligraphic stroke that reads as both apostrophe and subtle check -->
+  <!-- Positioned precisely between CALL and VANTAGE -->
+  <g transform="translate(202, 22)" filter="url(#pShadow)">
+    <!-- The stroke: starts thin at bottom-left, sweeps up-right to a tapered peak -->
+    <!-- Reads as an elegant apostrophe with a slight leftward tail suggesting verification -->
+    <path d="M 2 28
+             C 0 24, 1 18, 4 14
+             C 6 11, 9 8, 11 4
+             C 12 2, 14 0, 15 0
+             C 17 0, 18 2, 17 5
+             C 16 8, 13 14, 10 19
+             C 8 22, 6 25, 5 28
+             C 4 30, 2 30, 2 28 Z"
+          fill="url(#pGold)"/>
+    <!-- Tiny verification tick at the base — barely there, subconscious -->
+    <path d="M 0 26
+             L 3 29
+             L 7 23"
+          fill="none"
+          stroke="url(#pGold)"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.85"/>
+  </g>
+
+  <!-- "VANTAGE" — Navy, same weight, balanced -->
+  <text x="226" y="78"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="600"
+        font-size="56"
+        letter-spacing="6"
+        fill="#0A1628"
+        >VANTAGE</text>
+
+  <!-- Thin gold underline accent — institutional, restrained -->
+  <line x1="20" y1="94" x2="580" y2="94"
+        stroke="#C9A84C"
+        stroke-width="1.2"
+        opacity="0.5"/>
+
+  <!-- Tagline: small, precise, professional -->
+  <text x="580" y="110"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="400"
+        font-size="10"
+        letter-spacing="3"
+        fill="#0077B6"
+        text-anchor="end"
+        opacity="0.7"
+        >VERIFIED APPOINTMENTS</text>
+</svg>

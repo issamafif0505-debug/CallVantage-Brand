@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="iconBoltGrad" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#00A8E8"/>
+      <stop offset="55%" stop-color="#4DC9F6"/>
+      <stop offset="100%" stop-color="#00A8E8"/>
+    </linearGradient>
+    <linearGradient id="iconBoltGlow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#00A8E8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#4DC9F6" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .ic { font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif; font-size: 74px; font-weight: 800; fill: #0A1628; }
+      .iv { font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif; font-size: 74px; font-weight: 500; fill: #0A1628; }
+    </style>
+  </defs>
+
+  <!-- C letter -->
+  <text x="2" y="86" class="ic">C</text>
+
+  <!-- Lightning bolt glow -->
+  <ellipse cx="58" cy="32" rx="7" ry="17" fill="url(#iconBoltGlow)"/>
+
+  <!-- Lightning bolt between C and V -->
+  <path d="
+    M 53.5,9
+    L 60,9
+    L 56.5,25
+    L 62,25
+    L 50,46
+    L 53,28
+    L 47.5,28
+    Z
+  " fill="url(#iconBoltGrad)"/>
+
+  <!-- V letter -->
+  <text x="56" y="86" class="iv">V</text>
+</svg>

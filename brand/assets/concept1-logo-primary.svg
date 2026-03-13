@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80" width="500" height="80">
+  <defs>
+    <linearGradient id="boltGrad" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#00A8E8"/>
+      <stop offset="55%" stop-color="#4DC9F6"/>
+      <stop offset="100%" stop-color="#00A8E8"/>
+    </linearGradient>
+    <linearGradient id="boltGlow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#00A8E8" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#4DC9F6" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00A8E8" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .call-text {
+        font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        font-size: 54px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        fill: #0A1628;
+      }
+      .vantage-text {
+        font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        font-size: 54px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        fill: #0A1628;
+      }
+    </style>
+  </defs>
+
+  <!-- CALL text — bold/heavy -->
+  <text x="10" y="58" class="call-text">CALL</text>
+
+  <!-- Lightning bolt apostrophe — subtle glow aura -->
+  <ellipse cx="192" cy="28" rx="8" ry="20" fill="url(#boltGlow)"/>
+
+  <!-- Lightning bolt — refined angular shape, not cartoonish -->
+  <path d="
+    M 187,6
+    L 195,6
+    L 190.5,24
+    L 197,24
+    L 183,49
+    L 186.5,28
+    L 180.5,28
+    Z
+  " fill="url(#boltGrad)"/>
+
+  <!-- VANTAGE text — regular/medium weight -->
+  <text x="206" y="58" class="vantage-text">VANTAGE</text>
+</svg>

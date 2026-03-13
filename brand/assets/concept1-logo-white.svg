@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80" width="500" height="80">
+  <defs>
+    <linearGradient id="boltGradW" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#F8F9FA"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="boltGlowW" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .call-w {
+        font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        font-size: 54px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        fill: #F8F9FA;
+      }
+      .vantage-w {
+        font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        font-size: 54px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        fill: #F8F9FA;
+      }
+    </style>
+  </defs>
+
+  <!-- CALL text -->
+  <text x="10" y="58" class="call-w">CALL</text>
+
+  <!-- Lightning bolt glow -->
+  <ellipse cx="192" cy="28" rx="8" ry="20" fill="url(#boltGlowW)"/>
+
+  <!-- Lightning bolt — all white variant -->
+  <path d="
+    M 187,6
+    L 195,6
+    L 190.5,24
+    L 197,24
+    L 183,49
+    L 186.5,28
+    L 180.5,28
+    Z
+  " fill="url(#boltGradW)"/>
+
+  <!-- VANTAGE text -->
+  <text x="206" y="58" class="vantage-w">VANTAGE</text>
+</svg>

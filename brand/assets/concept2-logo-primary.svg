@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <defs>
+    <linearGradient id="goldArc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C9A84C"/>
+      <stop offset="40%" stop-color="#E8D48B"/>
+      <stop offset="100%" stop-color="#C9A84C"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#E8D48B" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#E8D48B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="arcGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- CALL text -->
+  <text x="30" y="82" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="5" fill="#0A1628">CALL</text>
+
+  <!-- Golden arc bridge (the apostrophe reimagined) -->
+  <!-- Outer glow layer -->
+  <path d="M 183 30 Q 210 8, 237 30" stroke="url(#goldGlow)" stroke-width="8" fill="none" stroke-linecap="round" filter="url(#softGlow)"/>
+  <!-- Main arc -->
+  <path d="M 185 32 Q 210 12, 235 32" stroke="url(#goldArc)" stroke-width="2.8" fill="none" stroke-linecap="round" filter="url(#arcGlow)"/>
+
+  <!-- Subtle energy dots along the arc -->
+  <circle cx="190" cy="29" r="1.3" fill="#E8D48B" opacity="0.7"/>
+  <circle cx="198" cy="22" r="1.0" fill="#E8D48B" opacity="0.55"/>
+  <circle cx="210" cy="18" r="1.5" fill="#E8D48B" opacity="0.85"/>
+  <circle cx="222" cy="22" r="1.0" fill="#E8D48B" opacity="0.55"/>
+  <circle cx="230" cy="29" r="1.3" fill="#E8D48B" opacity="0.7"/>
+  <!-- Micro particles -->
+  <circle cx="195" cy="26" r="0.6" fill="#C9A84C" opacity="0.4"/>
+  <circle cx="206" cy="17" r="0.7" fill="#C9A84C" opacity="0.35"/>
+  <circle cx="215" cy="17" r="0.6" fill="#C9A84C" opacity="0.35"/>
+  <circle cx="226" cy="26" r="0.6" fill="#C9A84C" opacity="0.4"/>
+
+  <!-- VANTAGE text -->
+  <text x="240" y="82" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="300" letter-spacing="5" fill="#0A1628">VANTAGE</text>
+
+  <!-- Subtle baseline accent -->
+  <line x1="32" y1="92" x2="448" y2="92" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+</svg>

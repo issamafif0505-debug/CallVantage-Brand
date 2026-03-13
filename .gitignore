@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vercel/
+*.log
+dist/
+.cache/

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="iconGold" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#A67C30"/>
+      <stop offset="25%" stop-color="#C9A84C"/>
+      <stop offset="48%" stop-color="#E8D48B"/>
+      <stop offset="72%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A67C30"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    CALL'VANTAGE Square Icon
+    Navy rounded-rect background, white C and V, golden accent between
+    Legible at 32px
+  -->
+
+  <!-- Navy background with rounded corners -->
+  <rect x="0" y="0" width="80" height="80" rx="8" ry="8" fill="#0A1628"/>
+
+  <!-- C (bold, white) — positioned left of center -->
+  <path d="
+    M 28,22
+    C 23.5,22 20.2,23.8 18,27.2
+    C 15.8,30.6 14.8,35 14.8,40.5
+    C 14.8,46 15.8,50.4 18,53.8
+    C 20.2,57.2 23.5,59 28,59
+    C 31.5,59 34.2,57.8 36.5,55.5
+    C 38.5,53.2 39.5,50 40,46
+    L 34,46
+    C 33.5,48.5 32.6,50.5 31.2,52
+    C 29.8,53.5 28.5,54 28,54
+    C 25.5,54 23.8,52.8 22.5,50.5
+    C 21.2,48.2 20.5,45 20.5,40.5
+    C 20.5,36 21.2,32.8 22.5,30.5
+    C 23.8,28.2 25.5,27 28,27
+    C 28.5,27 29.8,27.5 31.2,29
+    C 32.6,30.5 33.5,32.5 34,35
+    L 40,35
+    C 39.5,31 38.5,27.8 36.5,25.5
+    C 34.2,23.2 31.5,22 28,22 Z
+  " fill="#F8F9FA"/>
+
+  <!-- Golden Accent — calligraphic stroke between C and V -->
+  <path d="
+    M 42.5,18
+    C 43,17.6 43.8,17.8 44,18.5
+    L 45.2,22
+    C 45.6,23.2 45.7,24.5 45.5,25.8
+    L 44.2,36
+    C 44,37.5 43.5,38.3 42.8,38.5
+    C 42.2,38.7 41.7,38.2 41.4,37.2
+    L 40.8,35.2
+    C 40.5,34.2 40.4,33 40.6,31.8
+    L 41.8,23
+    C 41.9,22 41.8,21.2 41.5,20.5
+    L 41.2,19.3
+    C 40.8,18.3 41.5,17.5 42.5,18 Z
+  " fill="url(#iconGold)"/>
+
+  <!-- V (light, white) — positioned right of center -->
+  <path d="
+    M 47,23 L 55.5,56 L 58,56 L 66.5,23 L 62,23
+    L 56.7,49 L 51.5,23 Z
+  " fill="#F8F9FA"/>
+</svg>

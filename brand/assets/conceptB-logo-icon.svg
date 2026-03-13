@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Gold gradient -->
+    <linearGradient id="iGold" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#E8D48B"/>
+      <stop offset="50%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A8842C"/>
+    </linearGradient>
+    <!-- Navy to deep blue gradient for the background -->
+    <linearGradient id="iBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1B2E"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background — navy -->
+  <rect x="0" y="0" width="120" height="120" rx="16" ry="16" fill="url(#iBg)"/>
+
+  <!-- C — Left letter of the monogram, white -->
+  <!-- A clean geometric C that opens to the right -->
+  <text x="18" y="86"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="700"
+        font-size="72"
+        fill="#F8F9FA"
+        >C</text>
+
+  <!-- The Apostrophe-Check nestled between C and V -->
+  <!-- Elevated, gold, the focal point -->
+  <g transform="translate(56, 18)">
+    <!-- Calligraphic apostrophe with verification tick -->
+    <path d="M 2 24
+             C 0 20, 1 14, 4 10
+             C 6 7, 8 4, 10 1
+             C 11 0, 13 0, 13.5 1
+             C 14 3, 12 8, 9 14
+             C 7 18, 5 21, 4 24
+             C 3 26, 2 26, 2 24 Z"
+          fill="url(#iGold)"/>
+    <!-- Verification tick -->
+    <path d="M 0 22
+             L 3 25
+             L 7 19"
+          fill="none"
+          stroke="url(#iGold)"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- V — Right letter of the monogram, white -->
+  <text x="62" y="86"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="700"
+        font-size="72"
+        fill="#F8F9FA"
+        >V</text>
+
+  <!-- Bottom accent line — gold, thin -->
+  <line x1="16" y1="102" x2="104" y2="102"
+        stroke="#C9A84C"
+        stroke-width="1.5"
+        opacity="0.6"/>
+</svg>
