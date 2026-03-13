@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="dGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A67C30"/>
+      <stop offset="25%" stop-color="#C9A84C"/>
+      <stop offset="50%" stop-color="#E8D48B"/>
+      <stop offset="75%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A67C30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Navy background -->
+  <rect width="80" height="80" rx="8" fill="#0A1628"/>
+
+  <!-- C — bold -->
+  <text x="10" y="52" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8F9FA">C</text>
+
+  <!-- Diamond apostrophe -->
+  <g transform="translate(40, 28)">
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="#C9A84C" stroke-width="0.3" opacity="0.3"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#C9A84C" stroke-width="0.3" opacity="0.3"/>
+    <polygon points="0,-6 4.5,0 0,6 -4.5,0" fill="url(#dGold)" stroke="#E8D48B" stroke-width="0.4"/>
+  </g>
+
+  <!-- V — light -->
+  <text x="44" y="52" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="300" fill="#F8F9FA">V</text>
+</svg>

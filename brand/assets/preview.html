@@ -1,43 +1,284 @@
 <!DOCTYPE html>
-<html>
-<head><title>CALL'VANTAGE Logo Preview</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CALL'VANTAGE — Logo Concepts Comparison</title>
 <style>
-body { margin: 40px; font-family: 'Segoe UI', sans-serif; }
-.row { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
-.dark-bg { background: #0A1628; }
-h3 { margin: 0 0 12px; color: #333; }
-img { max-width: 100%; }
-.icon-row { display: flex; gap: 30px; align-items: center; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #F8F9FA;
+    color: #0A1628;
+    padding: 40px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+  .concept {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(10,22,40,0.06);
+    border: 1px solid #e9ecef;
+  }
+  .concept-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 16px;
+  }
+  .concept-name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .concept-tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #0A1628;
+    color: #F8F9FA;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .variant {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+  .variant-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #868e96;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .variant img {
+    max-width: 100%;
+    height: auto;
+  }
+  .variant-dark {
+    background: #0A1628;
+  }
+  .variant-dark .variant-label {
+    color: #868e96;
+  }
+  .variant-light {
+    background: #F0F2F5;
+  }
+  .icons-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-top: 20px;
+  }
+  .icon-box {
+    text-align: center;
+  }
+  .icon-box .variant-label {
+    margin-bottom: 8px;
+  }
+  .winner-badge {
+    background: #C9A84C;
+    color: #0A1628;
+  }
+  @media (max-width: 768px) {
+    .variants { grid-template-columns: 1fr; }
+    body { padding: 20px; }
+  }
 </style>
 </head>
 <body>
-<h1>CALL'VANTAGE - Concept 1: Lightning Bolt</h1>
 
-<div class="row">
-<h3>1. Primary Logo (transparent bg)</h3>
-<img src="concept1-logo-primary.svg" alt="Primary Logo">
+<h1>Call'Vantage</h1>
+<p class="subtitle">Logo Concepts — Ouvre ce fichier dans ton navigateur pour comparer</p>
+
+<!-- CONCEPT A -->
+<div class="concept">
+  <div class="concept-header">
+    <span class="concept-name">Concept A — L'Accent Doré</span>
+    <span class="concept-tag">Calligraphie</span>
+  </div>
+  <p style="color:#6c757d; font-size:13px; margin-bottom:20px;">L'apostrophe comme un trait calligraphique doré raffiné. Inspiration Cartier — luxe par la précision du geste.</p>
+  <div class="variants">
+    <div class="variant">
+      <div class="variant-label">Primary — fond transparent</div>
+      <img src="conceptA-logo-primary.svg" alt="Concept A Primary">
+    </div>
+    <div class="variant variant-dark">
+      <div class="variant-label">White — fond sombre</div>
+      <img src="conceptA-logo-white.svg" alt="Concept A White">
+    </div>
+    <div class="variant variant-light">
+      <div class="variant-label">Dark — fond clair</div>
+      <img src="conceptA-logo-dark.svg" alt="Concept A Dark">
+    </div>
+    <div class="variant">
+      <div class="variant-label">Standard</div>
+      <img src="conceptA-logo-primary.svg" alt="Concept A Primary 2">
+    </div>
+  </div>
+  <div class="icons-row">
+    <div class="icon-box">
+      <div class="variant-label">Icon 80px</div>
+      <img src="conceptA-logo-icon.svg" alt="Icon A" style="width:80px;height:80px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Icon 48px</div>
+      <img src="conceptA-logo-icon.svg" alt="Icon A sm" style="width:48px;height:48px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 32px</div>
+      <img src="conceptA-favicon.svg" alt="Favicon A" style="width:32px;height:32px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 16px</div>
+      <img src="conceptA-favicon.svg" alt="Favicon A xs" style="width:16px;height:16px;">
+    </div>
+  </div>
 </div>
 
-<div class="row icon-row">
-<div>
-<h3>2. Icon / Monogram</h3>
-<img src="concept1-logo-icon.svg" alt="Icon" style="width:120px">
-</div>
-<div>
-<h3>5. Favicon (32x32)</h3>
-<img src="concept1-favicon.svg" alt="Favicon" style="width:32px">
-<img src="concept1-favicon.svg" alt="Favicon 2x" style="width:64px">
-</div>
+<!-- CONCEPT B -->
+<div class="concept">
+  <div class="concept-header">
+    <span class="concept-name">Concept B — The Verified Mark</span>
+    <span class="concept-tag">Vérification</span>
+  </div>
+  <p style="color:#6c757d; font-size:13px; margin-bottom:20px;">L'apostrophe qui fait subtilement un check de vérification — symbole du différenciateur CALL'VANTAGE (RDV non qualifié = non facturé).</p>
+  <div class="variants">
+    <div class="variant">
+      <div class="variant-label">Primary — fond transparent</div>
+      <img src="conceptB-logo-primary.svg" alt="Concept B Primary">
+    </div>
+    <div class="variant variant-dark">
+      <div class="variant-label">White — fond sombre</div>
+      <img src="conceptB-logo-white.svg" alt="Concept B White">
+    </div>
+    <div class="variant variant-light">
+      <div class="variant-label">Dark — fond clair</div>
+      <img src="conceptB-logo-dark.svg" alt="Concept B Dark">
+    </div>
+    <div class="variant">
+      <div class="variant-label">Standard</div>
+      <img src="conceptB-logo-primary.svg" alt="Concept B Primary 2">
+    </div>
+  </div>
+  <div class="icons-row">
+    <div class="icon-box">
+      <div class="variant-label">Icon 80px</div>
+      <img src="conceptB-logo-icon.svg" alt="Icon B" style="width:80px;height:80px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Icon 48px</div>
+      <img src="conceptB-logo-icon.svg" alt="Icon B sm" style="width:48px;height:48px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 32px</div>
+      <img src="conceptB-favicon.svg" alt="Favicon B" style="width:32px;height:32px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 16px</div>
+      <img src="conceptB-favicon.svg" alt="Favicon B xs" style="width:16px;height:16px;">
+    </div>
+  </div>
 </div>
 
-<div class="row dark-bg">
-<h3 style="color:#fff">3. White Version (on dark bg)</h3>
-<img src="concept1-logo-white.svg" alt="White Logo">
+<!-- CONCEPT C -->
+<div class="concept">
+  <div class="concept-header">
+    <span class="concept-name">Concept C — Le Point de Mire</span>
+    <span class="concept-tag">Précision</span>
+  </div>
+  <p style="color:#6c757d; font-size:13px; margin-bottom:20px;">L'apostrophe comme un diamant géométrique de précision avec lignes de mire ultra-fines. Zéro fioriture — le luxe par la retenue absolue. Inspiration Accenture &amp; Deloitte.</p>
+  <div class="variants">
+    <div class="variant">
+      <div class="variant-label">Primary — fond transparent</div>
+      <img src="conceptC-logo-primary.svg" alt="Concept C Primary">
+    </div>
+    <div class="variant variant-dark">
+      <div class="variant-label">White — fond sombre</div>
+      <img src="conceptC-logo-white.svg" alt="Concept C White">
+    </div>
+    <div class="variant variant-light">
+      <div class="variant-label">Dark — fond clair</div>
+      <img src="conceptC-logo-dark.svg" alt="Concept C Dark">
+    </div>
+    <div class="variant">
+      <div class="variant-label">Standard</div>
+      <img src="conceptC-logo-primary.svg" alt="Concept C Primary 2">
+    </div>
+  </div>
+  <div class="icons-row">
+    <div class="icon-box">
+      <div class="variant-label">Icon 80px</div>
+      <img src="conceptC-logo-icon.svg" alt="Icon C" style="width:80px;height:80px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Icon 48px</div>
+      <img src="conceptC-logo-icon.svg" alt="Icon C sm" style="width:48px;height:48px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 32px</div>
+      <img src="conceptC-favicon.svg" alt="Favicon C" style="width:32px;height:32px;">
+    </div>
+    <div class="icon-box">
+      <div class="variant-label">Favicon 16px</div>
+      <img src="conceptC-favicon.svg" alt="Favicon C xs" style="width:16px;height:16px;">
+    </div>
+  </div>
 </div>
 
-<div class="row" style="background:#F0F2F5">
-<h3>4. Dark Version (on light bg)</h3>
-<img src="concept1-logo-dark.svg" alt="Dark Logo">
+<!-- CONCEPTS 1 & 2 (earlier, before redesign) -->
+<div class="concept" style="opacity:0.5;">
+  <div class="concept-header">
+    <span class="concept-name">Concept 1 — Lightning Bolt (rejeté)</span>
+    <span class="concept-tag" style="background:#E74C3C;">Rejeté</span>
+  </div>
+  <div class="variants">
+    <div class="variant">
+      <img src="concept1-logo-primary.svg" alt="Concept 1">
+    </div>
+    <div class="variant variant-dark">
+      <img src="concept1-logo-white.svg" alt="Concept 1 White">
+    </div>
+  </div>
+</div>
+
+<div class="concept" style="opacity:0.5;">
+  <div class="concept-header">
+    <span class="concept-name">Concept 2 — Connection Bridge</span>
+    <span class="concept-tag" style="background:#6c757d;">Ancien</span>
+  </div>
+  <div class="variants">
+    <div class="variant">
+      <img src="concept2-logo-primary.svg" alt="Concept 2">
+    </div>
+    <div class="variant variant-dark">
+      <img src="concept2-logo-white.svg" alt="Concept 2 White">
+    </div>
+  </div>
 </div>
 
 </body>

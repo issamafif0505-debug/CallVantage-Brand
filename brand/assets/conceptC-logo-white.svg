@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 90">
+  <!-- CALL — heavy weight, white -->
+  <text x="20" y="58" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="6" fill="#F8F9FA">CALL</text>
+
+  <!-- The Diamond — white with opacity depth -->
+  <g transform="translate(200, 45)">
+    <line x1="-18" y1="0" x2="18" y2="0" stroke="#F8F9FA" stroke-width="0.3" opacity="0.15"/>
+    <line x1="0" y1="-18" x2="0" y2="18" stroke="#F8F9FA" stroke-width="0.3" opacity="0.15"/>
+    <polygon points="0,-11 8,0 0,11 -8,0" fill="#F8F9FA" opacity="0.9" stroke="#FFFFFF" stroke-width="0.5"/>
+    <polygon points="0,-6 4,0 0,6 -4,0" fill="none" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  </g>
+
+  <!-- VANTAGE — light weight, white -->
+  <text x="222" y="58" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="300" letter-spacing="6" fill="#F8F9FA">VANTAGE</text>
+</svg>
