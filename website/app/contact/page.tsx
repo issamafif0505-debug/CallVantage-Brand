@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const N8N_WEBHOOK_URL = "https://your-n8n-instance.com/webhook/callvantage-contact";
+const N8N_WEBHOOK_URL = "http://76.13.38.126:5678/webhook/callvantage-contact";
 
 function useReveal() {
   useEffect(() => {
