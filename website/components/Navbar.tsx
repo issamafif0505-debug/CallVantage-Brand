@@ -50,13 +50,37 @@ export default function Navbar() {
           justifyContent: "space-between",
         }}
       >
-        {/* Logo */}
+        {/* Logo — inline SVG (blanc sur fond navy) */}
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <img
-            src="/logo-primary.svg"
-            alt="CALL'VANTAGE"
-            style={{ height: "36px", width: "auto", display: "block" }}
-          />
+          <svg
+            viewBox="0 0 620 90"
+            height="38"
+            width="auto"
+            aria-label="CALL'VANTAGE"
+            style={{ display: "block", overflow: "visible" }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="navGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#A67C30"/>
+                <stop offset="50%" stopColor="#E8D48B"/>
+                <stop offset="100%" stopColor="#A67C30"/>
+              </linearGradient>
+            </defs>
+            {/* Sceau CV */}
+            <circle cx="42" cy="45" r="36" fill="none" stroke="#C9A84C" strokeWidth="1.2"/>
+            <circle cx="42" cy="45" r="33" fill="none" stroke="#C9A84C" strokeWidth="0.3" opacity="0.5"/>
+            <text x="22" y="59" fontFamily="Georgia,'Palatino Linotype',serif" fontSize="38" fontWeight="700" fill="#F8F9FA">C</text>
+            <text x="44" y="59" fontFamily="Georgia,'Palatino Linotype',serif" fontSize="38" fontWeight="400" fill="url(#navGold)">V</text>
+            {/* Séparateur */}
+            <line x1="96" y1="22" x2="96" y2="68" stroke="#C9A84C" strokeWidth="0.5" opacity="0.3"/>
+            {/* CALL — bold blanc */}
+            <text x="116" y="57" fontFamily="'Segoe UI','Helvetica Neue',Arial,sans-serif" fontSize="32" fontWeight="800" letterSpacing="5" fill="#F8F9FA">CALL</text>
+            {/* Apostrophe dorée */}
+            <text x="260" y="37" fontFamily="Georgia,'Palatino Linotype',serif" fontSize="24" fill="#C9A84C">&#x2019;</text>
+            {/* VANTAGE — light blanc */}
+            <text x="274" y="57" fontFamily="'Segoe UI','Helvetica Neue',Arial,sans-serif" fontSize="32" fontWeight="300" letterSpacing="5" fill="#F8F9FA">VANTAGE</text>
+          </svg>
         </Link>
 
         {/* Desktop Nav */}
