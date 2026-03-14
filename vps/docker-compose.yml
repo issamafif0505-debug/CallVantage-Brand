@@ -1,0 +1,108 @@
+version: "3.8"
+
+# ================================================================
+# CALL'VANTAGE — VPS Stack
+# Serveur: 76.13.38.126
+# Services: N8N (automations) + WordPress (blog) + MySQL + Nginx
+# ================================================================
+
+services:
+
+  # ── N8N — Automations & Webhooks ─────────────────────────────
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: callvantage_n8n
+    restart: unless-stopped
+    environment:
+      - N8N_HOST=n8n.callvantage.fr
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.callvantage.fr/
+      - GENERIC_TIMEZONE=Europe/Paris
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - DB_TYPE=sqlite
+    volumes:
+      - n8n_data:/home/node/.n8n
+    expose:
+      - "5678"
+    networks:
+      - callvantage_net
+
+  # ── WordPress — Blog / Landing pages ─────────────────────────
+  wordpress:
+    image: wordpress:latest
+    container_name: callvantage_wp
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: ${MYSQL_WP_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: cv_
+    volumes:
+      - wp_data:/var/www/html
+    expose:
+      - "80"
+    depends_on:
+      - mysql
+    networks:
+      - callvantage_net
+
+  # ── MySQL — Base de données WordPress ────────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: callvantage_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: ${MYSQL_WP_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    expose:
+      - "3306"
+    networks:
+      - callvantage_net
+
+  # ── Nginx — Reverse Proxy + SSL ──────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: callvantage_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - certbot_data:/var/www/certbot:ro
+      - certbot_certs:/etc/letsencrypt:ro
+    depends_on:
+      - n8n
+      - wordpress
+    networks:
+      - callvantage_net
+
+  # ── Certbot — SSL Let's Encrypt ───────────────────────────────
+  certbot:
+    image: certbot/certbot
+    container_name: callvantage_certbot
+    volumes:
+      - certbot_data:/var/www/certbot
+      - certbot_certs:/etc/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+  n8n_data:
+  wp_data:
+  mysql_data:
+  certbot_data:
+  certbot_certs:
+
+networks:
+  callvantage_net:
+    driver: bridge
