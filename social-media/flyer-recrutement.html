@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALL'VANTAGE — Recrutement Agents Téléphoniques</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .flyer {
+    width: 210mm;
+    min-height: 297mm;
+    background: #0A1628;
+    color: #F8F9FA;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Decorative top gold bar */
+  .flyer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #C9A84C, #E8D48B, #C9A84C);
+  }
+
+  /* Decorative bottom gold bar */
+  .flyer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #C9A84C, #E8D48B, #C9A84C);
+  }
+
+  /* Geometric accent circles */
+  .geo-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 168, 232, 0.12);
+  }
+  .geo-circle.c1 { width: 400px; height: 400px; top: -120px; right: -100px; }
+  .geo-circle.c2 { width: 280px; height: 280px; bottom: 80px; left: -80px; }
+  .geo-circle.c3 { width: 180px; height: 180px; top: 340px; right: 40px; border-color: rgba(201, 168, 76, 0.1); }
+
+  /* Diagonal decorative line */
+  .diag-line {
+    position: absolute;
+    top: 0;
+    right: 180px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(201, 168, 76, 0.15) 30%, rgba(201, 168, 76, 0.15) 70%, transparent);
+    transform: rotate(3deg);
+    transform-origin: top center;
+  }
+
+  /* Header */
+  .header {
+    padding: 48px 48px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #F8F9FA;
+  }
+
+  .logo-text span {
+    color: #C9A84C;
+  }
+
+  .badge {
+    background: linear-gradient(135deg, #C9A84C, #E8D48B);
+    color: #0A1628;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: #C9A84C;
+    margin-top: 8px;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 40px 48px 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 .gold {
+    color: #C9A84C;
+  }
+
+  .hero h1 .electric {
+    color: #00A8E8;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: #CED4DA;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+
+  .hero-sub strong {
+    color: #F8F9FA;
+    font-weight: 600;
+  }
+
+  /* Divider */
+  .divider {
+    margin: 0 48px;
+    height: 1px;
+    background: linear-gradient(90deg, #C9A84C, rgba(201, 168, 76, 0.2), transparent);
+  }
+
+  /* Content sections */
+  .content {
+    padding: 28px 48px;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #C9A84C;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #00A8E8;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .item-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border: 1px solid rgba(0, 168, 232, 0.4);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background: rgba(0, 168, 232, 0.06);
+    color: #00A8E8;
+  }
+
+  .item-text {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #CED4DA;
+  }
+
+  .item-text strong {
+    color: #F8F9FA;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  /* Highlight bar */
+  .highlight-bar {
+    margin: 8px 48px 20px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, rgba(0, 168, 232, 0.08), rgba(30, 58, 95, 0.6));
+    border-left: 3px solid #00A8E8;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .highlight-bar p {
+    font-size: 14px;
+    color: #CED4DA;
+    line-height: 1.6;
+  }
+
+  .highlight-bar strong {
+    color: #00A8E8;
+    font-weight: 600;
+  }
+
+  .highlight-bar .gold-text {
+    color: #C9A84C;
+    font-weight: 600;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: 28px 48px 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, #162340, #1E3A5F);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .cta-left {
+    flex: 1;
+  }
+
+  .cta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #C9A84C;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .cta-phone {
+    font-family: 'DM Mono', monospace;
+    font-size: 28px;
+    color: #F8F9FA;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .cta-method {
+    font-size: 12px;
+    color: #CED4DA;
+    margin-top: 4px;
+  }
+
+  .cta-method span {
+    color: #2ECC71;
+    font-weight: 600;
+  }
+
+  .cta-right {
+    text-align: right;
+  }
+
+  .cta-qr-placeholder {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed rgba(201, 168, 76, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: rgba(201, 168, 76, 0.6);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 0 48px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-address {
+    font-size: 10px;
+    color: rgba(206, 212, 218, 0.6);
+    line-height: 1.6;
+  }
+
+  .footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: #C9A84C;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  /* Corner accents */
+  .corner {
+    position: absolute;
+    z-index: 1;
+  }
+  .corner.tl { top: 24px; left: 24px; }
+  .corner.br { bottom: 24px; right: 24px; transform: rotate(180deg); }
+  .corner svg { width: 20px; height: 20px; }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .flyer { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+  <!-- Geometric decorations -->
+  <div class="geo-circle c1"></div>
+  <div class="geo-circle c2"></div>
+  <div class="geo-circle c3"></div>
+  <div class="diag-line"></div>
+
+  <!-- Corner accents -->
+  <div class="corner tl">
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20V0h20" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="corner br">
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20V0h20" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-text">CALL<span>'</span>VANTAGE</div>
+      <div class="badge">On Recrute</div>
+    </div>
+    <div class="header-line"></div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>
+      <span class="gold">Agents</span><br>
+      Téléphoniques<br>
+      <span class="electric">B2B</span>
+    </h1>
+    <p class="hero-sub">
+      Rejoins une équipe spécialisée dans le secteur de <strong>l'énergie en France</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="two-col">
+      <!-- Left column: What we offer -->
+      <div>
+        <h3 class="section-title">Ce qu'on t'offre</h3>
+
+        <div class="item">
+          <div class="item-icon">&#128176;</div>
+          <div class="item-text">
+            <strong>Salaire fixe + primes</strong>
+            Rémunération attractive basée sur tes résultats
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#128218;</div>
+          <div class="item-text">
+            <strong>Formation complète</strong>
+            Pas besoin d'expérience énergie, on te forme
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#128640;</div>
+          <div class="item-text">
+            <strong>Évolution rapide</strong>
+            Les profils performants montent vite
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#127970;</div>
+          <div class="item-text">
+            <strong>Bureau moderne</strong>
+            Cadre professionnel au coeur de Gueliz
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Profile -->
+      <div>
+        <h3 class="section-title">Ton profil</h3>
+
+        <div class="item">
+          <div class="item-icon">&#127467;</div>
+          <div class="item-text">
+            <strong>Français impeccable</strong>
+            Maîtrise orale indispensable
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#128170;</div>
+          <div class="item-text">
+            <strong>Fibre commerciale</strong>
+            Tu sais convaincre et tu aimes le challenge
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#9201;</div>
+          <div class="item-text">
+            <strong>Ponctuel & motivé</strong>
+            Orienté résultats, rigoureux dans le travail
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-icon">&#9989;</div>
+          <div class="item-text">
+            <strong>Disponible rapidement</strong>
+            Disponibilité immédiate est un plus
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Highlight bar -->
+  <div class="highlight-bar">
+    <p>
+      <strong>Secteur :</strong> Énergie (marché français) &bull;
+      <strong>Mission :</strong> Prise de RDV qualifiés pour courtiers en énergie &bull;
+      <span class="gold-text">Horaires conformes au fuseau français (GMT+1)</span>
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-box">
+      <div class="cta-left">
+        <div class="cta-label">Envoie ton CV par WhatsApp</div>
+        <div class="cta-phone">+212 664 860 353</div>
+        <div class="cta-method"><span>WhatsApp</span> &mdash; Réponse rapide garantie</div>
+      </div>
+      <div class="cta-right">
+        <div class="cta-qr-placeholder">
+          QR Code<br>WhatsApp
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-address">
+      Gueliz &mdash; Av Yacoub el Mansour<br>
+      Immeuble Amitaf B, Bureau 6<br>
+      Marrakech, 40000
+    </div>
+    <div class="footer-tagline">La qualification fait toute la différence.</div>
+  </div>
+</div>
+
+</body>
+</html>
